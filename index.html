@@ -198,8 +198,8 @@
             </div>
         </section>
 
-        <section id="dashboard" class="py-32 section-padding bg-slate-50 overflow-hidden">
-            <div class="max-w-screen-2xl mx-auto">
+        <section id="dashboard" class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100">
+            <div class="max-w-screen-2xl mx-auto px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="animate-on-scroll">
                         <span
@@ -339,12 +339,14 @@
 
         <section id="precios" class="animate-on-scroll section-padding py-32 bg-white">
             <div class="max-w-screen-2xl mx-auto text-center mb-20">
-                <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6">Inversión en
-                    Eficiencia</h2>
+                <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6 text-primary">
+                    Inversión en Eficiencia</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
-                    <div class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between">
+                    <div
+                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase">Starter Lite</h4>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Starter Lite
+                            </h4>
                             <div class="text-4xl font-black mb-6">149€ <span class="text-lg font-normal">/mes</span>
                             </div>
                             <ul class="text-sm text-slate-500 space-y-3 mb-10">
@@ -357,17 +359,19 @@
                             </ul>
                         </div>
                         <button onclick="toggleModal()"
-                            class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Empezar
+                            class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold text-primary hover:bg-primary hover:text-white transition-colors">Empezar
                             ahora</button>
                     </div>
                     <div
                         class="p-10 rounded-3xl bg-primary text-white shadow-2xl bento-card flex flex-col justify-between relative">
-                        <div class="absolute top-5 right-5 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold">
+                        <div
+                            class="absolute top-5 right-5 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold text-white">
                             POPULAR</div>
                         <div>
-                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase">Real Estate Pro</h4>
-                            <div class="text-4xl font-black mb-6">490€ <span class="text-lg font-normal">/mes</span>
-                            </div>
+                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest">Real Estate Pro
+                            </h4>
+                            <div class="text-4xl font-black mb-6">490€ <span
+                                    class="text-lg font-normal text-white/60">/mes</span></div>
                             <ul class="text-sm text-white/70 space-y-3 mb-10">
                                 <li class="flex items-center gap-2"><span
                                         class="material-symbols-outlined text-white text-xs">check</span> Activos
@@ -381,14 +385,15 @@
                             class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
                             Pro</button>
                     </div>
-                    <div class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between">
+                    <div
+                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase">Global</h4>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Global</h4>
                             <div class="text-4xl font-black mb-6 text-primary">Custom</div>
                             <p class="text-sm text-slate-500 mb-10">Para grandes carteras y fondos institucionales.</p>
                         </div>
                         <button onclick="toggleModal()"
-                            class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Contactar</button>
+                            class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold text-primary hover:bg-primary hover:text-white transition-colors">Contactar</button>
                     </div>
                 </div>
             </div>
@@ -507,25 +512,27 @@
     </div>
 
     <script>
-        // Gestión del Modal Principal
         function toggleModal() {
             const modal = document.getElementById('demoModal');
             modal.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
         }
 
-        // Gestión del Nuevo Modal de Información (Sustituye Alerts)
         function showInfo(title, content) {
             document.getElementById('infoTitle').innerText = title;
             document.getElementById('infoContent').innerText = content;
             document.getElementById('infoModal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeInfo() {
             document.getElementById('infoModal').classList.add('hidden');
             if (document.getElementById('demoModal').classList.contains('hidden')) {
-                document.body.classList.remove('overflow-hidden');
+                document.body.style.overflow = 'auto';
             }
         }
 
@@ -553,19 +560,6 @@
             });
         });
 
-        // Asegurar que botones abran modal
-        document.querySelectorAll('button:not([type="submit"])').forEach(btn => {
-            const text = btn.innerText.toLowerCase();
-            const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar', 'auditoría', 'solicitar'];
-            if (actionWords.some(word => text.includes(word))) {
-                btn.addEventListener('click', (e) => {
-                    if (btn.closest('footer')) return; // Dejar que los del footer usen sus onclicks específicos
-                    e.preventDefault();
-                    toggleModal();
-                });
-            }
-        });
-
         const form = document.getElementById('leadForm');
         if (form) {
             form.addEventListener('submit', async function (e) {
@@ -587,6 +581,7 @@
                 } catch (error) {
                     btn.innerText = "Enviar y recibir NDA";
                     btn.disabled = false;
+                    alert("Error al enviar. Por favor, inténtalo de nuevo.");
                 }
             });
         }
