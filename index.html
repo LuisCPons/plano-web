@@ -84,20 +84,27 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Carrusel Infinito Corregido */
         @keyframes scroll {
             0% {
                 transform: translateX(0);
             }
 
             100% {
-                transform: translateX(calc(-250px * 4));
+                transform: translateX(calc(-250px * 8));
             }
+        }
+
+        .logo-slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
         }
 
         .logo-slider {
             display: flex;
-            width: calc(250px * 8);
-            animation: scroll 25s linear infinite;
+            width: calc(250px * 16);
+            animation: scroll 30s linear infinite;
         }
 
         .logo-item {
@@ -108,27 +115,31 @@
             align-items: center;
         }
 
+        /* Sliders Tácticos Corregidos */
         input[type=range] {
             appearance: none;
             width: 100%;
             height: 6px;
-            background: #e2e8f0;
+            background: #334155;
             border-radius: 5px;
             outline: none;
         }
 
         input[type=range]::-webkit-slider-thumb {
             appearance: none;
-            width: 20px;
-            height: 20px;
-            background: #1A1C1E;
+            width: 24px;
+            height: 24px;
+            background: #34d399;
             border-radius: 50%;
             cursor: pointer;
             transition: 0.2s;
+            border: 3px solid #1A1C1E;
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
         }
 
         input[type=range]::-webkit-slider-thumb:hover {
             transform: scale(1.2);
+            background: #10b981;
         }
 
         @media (max-width: 640px) {
@@ -150,7 +161,8 @@
                 <span class="text-xl font-extrabold tracking-tighter font-headline text-primary">PLANO</span>
             </div>
             <nav class="hidden md:flex gap-10 items-center">
-                <a class="text-sm font-semibold hover:text-accent transition-colors" href="#dashboard">Plataforma</a>
+                <a class="text-sm font-semibold hover:text-accent transition-colors text-primary"
+                    href="#dashboard">Plataforma</a>
                 <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
                     href="#precios">Precios</a>
                 <button onclick="toggleModal()"
@@ -189,8 +201,44 @@
                 <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Infraestructura tecnológica
                     de confianza</p>
             </div>
-            <div class="relative flex">
+            <div class="logo-slider-container">
                 <div class="logo-slider grayscale opacity-40 hover:opacity-100 transition-opacity duration-500">
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
+                            alt="Vercel"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                            class="h-8" alt="GitHub"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
+                            alt="Google Cloud"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
+                            alt="Tailwind"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
+                            alt="Vercel"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                            class="h-8" alt="GitHub"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
+                            alt="Google Cloud"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
+                            alt="Tailwind"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
+                            alt="Vercel"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                            class="h-8" alt="GitHub"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
+                            alt="Google Cloud"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
+                            alt="Tailwind"></div>
                     <div class="logo-item"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
                             alt="Vercel"></div>
@@ -209,14 +257,13 @@
 
         <section id="dashboard" class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100">
             <div class="max-w-screen-2xl mx-auto px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-primary">
                     <div class="animate-on-scroll">
                         <span
-                            class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block italic text-accent">Experiencia
+                            class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block italic">Experiencia
                             PLANO</span>
-                        <h2
-                            class="text-4xl md:text-6xl font-extrabold tracking-tighter text-primary mb-8 leading-tight">
-                            Toda tu cartera, bajo un mismo compás.</h2>
+                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Toda tu
+                            cartera, bajo un mismo compás.</h2>
                         <p class="text-xl text-slate-500 mb-10 max-w-lg">Nuestra interfaz centraliza datos complejos en
                             una visualización intuitiva. No más búsquedas en cientos de archivos.</p>
                         <ul class="space-y-6">
@@ -224,7 +271,7 @@
                                 <span
                                     class="material-symbols-outlined text-primary bg-white p-2 rounded-lg shadow-sm">map</span>
                                 <div>
-                                    <h4 class="font-bold text-primary">Geolocalización Inteligente</h4>
+                                    <h4 class="font-bold">Geolocalización Inteligente</h4>
                                     <p class="text-sm text-slate-500">Visualiza el rendimiento de tus activos en tiempo
                                         real.</p>
                                 </div>
@@ -243,9 +290,9 @@
 
         <section class="py-24 bg-white border-b border-slate-100">
             <div class="max-w-screen-xl mx-auto px-8">
-                <div class="text-center mb-20 animate-on-scroll">
-                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-primary mb-4">Tu optimización
-                        en tres pasos</h2>
+                <div class="text-center mb-20 animate-on-scroll text-primary">
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4">Tu optimización en tres pasos
+                    </h2>
                     <p class="text-slate-500 text-lg">De datos crudos a decisiones estratégicas en menos de 24 horas.
                     </p>
                 </div>
@@ -285,49 +332,49 @@
                     <div>
                         <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">¿Cuánto
                             dinero estás dejando de percibir?</h2>
-                        <p class="text-xl text-slate-400 mb-12">La falta de actualización de IPC, el Yield Gap y la
-                            ineficiencia operativa drenan tu rentabilidad. Calcúlalo tú mismo.</p>
+                        <p class="text-xl text-slate-400 mb-12">La falta de optimización drena tu rentabilidad.
+                            Calcúlalo tú mismo con nuestra estimación conservadora.</p>
 
-                        <div class="space-y-10">
+                        <div class="space-y-12">
                             <div>
-                                <div class="flex justify-between mb-4">
+                                <div class="flex justify-between mb-6">
                                     <span class="text-sm font-bold uppercase tracking-widest text-slate-500">Número de
                                         Activos</span>
-                                    <span id="units-val" class="text-2xl font-black text-white">50</span>
+                                    <span id="units-val" class="text-3xl font-black text-white">50</span>
                                 </div>
-                                <input type="range" id="units" min="1" max="200" value="50" class="w-full">
+                                <input type="range" id="units" min="1" max="200" value="50">
                             </div>
                             <div>
-                                <div class="flex justify-between mb-4">
+                                <div class="flex justify-between mb-6">
                                     <span class="text-sm font-bold uppercase tracking-widest text-slate-500">Renta
                                         Mensual Media (€)</span>
-                                    <span id="rent-val" class="text-2xl font-black text-white">1.200€</span>
+                                    <span id="rent-val" class="text-3xl font-black text-white">1.200€</span>
                                 </div>
-                                <input type="range" id="rent" min="500" max="5000" step="50" value="1200"
-                                    class="w-full">
+                                <input type="range" id="rent" min="500" max="5000" step="50" value="1200">
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-10 border border-white/10 text-center">
-                        <span class="text-emerald-400 font-bold text-sm uppercase tracking-[0.2em] mb-4 block">Potencial
+                    <div
+                        class="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10 text-center relative overflow-hidden">
+                        <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/10 blur-3xl rounded-full"></div>
+                        <span class="text-emerald-400 font-bold text-sm uppercase tracking-[0.2em] mb-6 block">Potencial
                             de Optimización Estimado</span>
                         <div id="leak-total" class="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-white">
                             86.400€</div>
-                        <p class="text-slate-400 mb-10 text-lg italic">Fuga de rentabilidad anual detectada en tu
-                            cartera.</p>
+                        <p class="text-slate-400 mb-10 text-lg italic">Fuga de rentabilidad anual en tu cartera actual.
+                        </p>
                         <button onclick="toggleModal()"
-                            class="interactive-btn w-full bg-white text-primary py-5 rounded-2xl font-bold text-xl shadow-2xl">Recuperar
+                            class="interactive-btn w-full bg-emerald-500 text-primary py-6 rounded-2xl font-bold text-xl shadow-[0_20px_50px_rgba(16,185,129,0.3)] hover:bg-emerald-400">Recuperar
                             este capital ahora</button>
                     </div>
                 </div>
             </div>
-            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-3xl rounded-full -mr-48 -mt-48"></div>
         </section>
 
         <section class="py-20 bg-slate-50 border-y border-slate-100">
-            <div class="max-w-screen-xl mx-auto px-8">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-12 text-primary">
+            <div class="max-w-screen-xl mx-auto px-8 text-primary">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                     <div class="flex-1">
                         <div class="flex items-center gap-3 mb-6">
                             <span class="material-symbols-outlined text-emerald-500 text-3xl">verified_user</span>
@@ -364,7 +411,8 @@
                     <div
                         class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase">Starter Lite</h4>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Starter Lite
+                            </h4>
                             <div class="text-4xl font-black mb-6">149€ <span class="text-lg font-normal">/mes</span>
                             </div>
                             <ul class="text-sm text-slate-500 space-y-3 mb-10">
@@ -385,7 +433,8 @@
                         <div class="absolute top-5 right-5 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold">
                             POPULAR</div>
                         <div>
-                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase">Real Estate Pro</h4>
+                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest">Real Estate Pro
+                            </h4>
                             <div class="text-4xl font-black mb-6">490€ <span class="text-lg font-normal">/mes</span>
                             </div>
                             <ul class="text-sm text-white/70 space-y-3 mb-10">
@@ -404,7 +453,7 @@
                     <div
                         class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase">Global</h4>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Global</h4>
                             <div class="text-4xl font-black mb-6">Custom</div>
                         </div>
                         <button onclick="toggleModal()"
@@ -471,12 +520,12 @@
                 <p class="text-slate-500 text-sm">Recibe tu reporte y acceso al dashboard en 24h.</p>
             </div>
             <form id="leadForm" class="space-y-4" action="https://formspree.io/f/xkopkzla" method="POST">
-                <input type="text" name="name" required class="w-full bg-slate-50 border-none rounded-xl p-4"
-                    placeholder="Nombre completo">
-                <input type="text" name="company" required class="w-full bg-slate-50 border-none rounded-xl p-4"
-                    placeholder="Empresa">
-                <input type="email" name="email" required class="w-full bg-slate-50 border-none rounded-xl p-4"
-                    placeholder="Email corporativo">
+                <input type="text" name="name" required
+                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Nombre completo">
+                <input type="text" name="company" required
+                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Empresa">
+                <input type="email" name="email" required
+                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Email corporativo">
                 <button type="submit"
                     class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg">Enviar y
                     recibir NDA</button>
@@ -500,7 +549,7 @@
     </div>
 
     <script>
-        // Lógica de la calculadora
+        // Calculadora
         const unitsInput = document.getElementById('units');
         const rentInput = document.getElementById('rent');
         const leakDisplay = document.getElementById('leak-total');
@@ -512,8 +561,6 @@
             const rent = parseInt(rentInput.value);
             unitsVal.innerText = units;
             rentVal.innerText = rent.toLocaleString() + '€';
-
-            // Fórmula: Unidades * Renta * 12 meses * 12% de fuga anual
             const annualLeak = units * rent * 12 * 0.12;
             leakDisplay.innerText = Math.round(annualLeak).toLocaleString() + '€';
         }
@@ -521,7 +568,7 @@
         unitsInput.addEventListener('input', updateCalculator);
         rentInput.addEventListener('input', updateCalculator);
 
-        // Gestión de Modales
+        // Modales
         function toggleModal() {
             const modal = document.getElementById('demoModal');
             modal.classList.toggle('hidden');
