@@ -66,7 +66,7 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        /* Botones Interactivos (Mejora UX) */
+        /* Botones Interactivos */
         .interactive-btn {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
             cursor: pointer;
@@ -80,7 +80,6 @@
 
         .interactive-btn:active {
             transform: translateY(0);
-            filter: brightness(0.9);
         }
 
         /* Bento Cards */
@@ -102,7 +101,31 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Ajustes específicos para móviles */
+        /* --- NUEVO CSS PARA LOGOS ANIMADOS --- */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 4));
+            }
+        }
+
+        .logo-slider {
+            display: flex;
+            width: calc(250px * 8);
+            animation: scroll 25s linear infinite;
+        }
+
+        .logo-item {
+            width: 250px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         @media (max-width: 640px) {
             .section-padding {
                 padding-left: 1.5rem !important;
@@ -120,7 +143,8 @@
 <body class="bg-background text-primary font-body antialiased">
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-500">
         <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 py-5">
-            <div class="flex items-center gap-2 group cursor-pointer">
+            <div class="flex items-center gap-2 group cursor-pointer"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <span
                     class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:rotate-90 duration-500">architecture</span>
                 <span class="text-xl font-extrabold tracking-tighter font-headline">PLANO</span>
@@ -153,8 +177,7 @@
                     Optimiza tu cartera con precisión quirúrgica.</h1>
                 <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Consigue hoy tu
                     <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad en
-                    tus activos inmobiliarios.
-                </p>
+                    tus activos inmobiliarios.</p>
                 <div class="flex flex-col sm:flex-row gap-5 justify-center">
                     <button
                         class="interactive-btn bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg">Solicitar
@@ -163,15 +186,14 @@
             </div>
         </section>
 
-
         <section class="py-16 border-y border-slate-100 bg-white overflow-hidden">
-            <div class="max-w-screen-xl mx-auto px-8 mb-10">
-                <p class="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+            <div class="max-w-screen-xl mx-auto px-8 mb-10 text-center">
+                <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
                     Infraestructura tecnológica de confianza
                 </p>
             </div>
 
-            <div class="relative flex overflow-x-hidden">
+            <div class="relative flex">
                 <div class="logo-slider grayscale opacity-40 hover:opacity-100 transition-opacity duration-500">
                     <div class="logo-item"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
@@ -185,7 +207,6 @@
                     <div class="logo-item"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
                             alt="Tailwind"></div>
-
                     <div class="logo-item"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
                             alt="Vercel"></div>
@@ -266,14 +287,14 @@
                             </h4>
                             <div class="text-4xl font-headline font-black mb-6">490€ <span
                                     class="text-lg font-medium text-white/40">/mes</span></div>
-                            <ul class="space-y-4 mb-10">
-                                <li class="flex items-center gap-3 text-sm text-white/80"><span
+                            <ul class="space-y-4 mb-10 text-sm">
+                                <li class="flex items-center gap-3 text-white/80"><span
                                         class="material-symbols-outlined text-white text-sm">check_circle</span> Activos
                                     ilimitados</li>
-                                <li class="flex items-center gap-3 text-sm text-white/80"><span
+                                <li class="flex items-center gap-3 text-white/80"><span
                                         class="material-symbols-outlined text-white text-sm">check_circle</span>
                                     Análisis predictivo IA</li>
-                                <li class="flex items-center gap-3 text-sm text-white/80"><span
+                                <li class="flex items-center gap-3 text-white/80"><span
                                         class="material-symbols-outlined text-white text-sm">check_circle</span> API
                                     Access completo</li>
                             </ul>
@@ -288,14 +309,14 @@
                             <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">Global
                                 Institutional</h4>
                             <div class="text-4xl font-headline font-black mb-6">Custom</div>
-                            <ul class="space-y-4 mb-10">
-                                <li class="flex items-center gap-3 text-sm text-slate-600"><span
+                            <ul class="space-y-4 mb-10 text-sm">
+                                <li class="flex items-center gap-3 text-slate-600"><span
                                         class="material-symbols-outlined text-primary text-sm">check_circle</span>
                                     Soporte 24/7 dedicado</li>
-                                <li class="flex items-center gap-3 text-sm text-slate-600"><span
+                                <li class="flex items-center gap-3 text-slate-600"><span
                                         class="material-symbols-outlined text-primary text-sm">check_circle</span>
                                     Despliegue On-Premise</li>
-                                <li class="flex items-center gap-3 text-sm text-slate-600"><span
+                                <li class="flex items-center gap-3 text-slate-600"><span
                                         class="material-symbols-outlined text-primary text-sm">check_circle</span>
                                     Consultoría estratégica</li>
                             </ul>
@@ -365,9 +386,8 @@
                     class="hidden text-sm text-red-500 font-medium bg-red-50/50 p-3 rounded-lg border border-red-100">
                 </div>
                 <button type="submit"
-                    class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl shadow-black/10">
-                    Confirmar mi Auditoría
-                </button>
+                    class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl shadow-black/10">Confirmar
+                    mi Auditoría</button>
             </form>
 
             <div id="successMessage"
@@ -388,7 +408,6 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            // Animaciones de scroll suaves
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -403,7 +422,6 @@
                 observer.observe(el);
             });
 
-            // Navegación inteligente
             const nav = document.getElementById('navbar');
             if (nav) {
                 window.addEventListener('scroll', () => {
@@ -418,7 +436,6 @@
             }
         });
 
-        // Apertura de modal para todos los botones de acción
         document.querySelectorAll('button:not([type="submit"])').forEach(btn => {
             const text = btn.innerText.toLowerCase();
             const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar', 'auditoría'];
@@ -430,7 +447,6 @@
             }
         });
 
-        // Envío de formulario vía AJAX (Formspree)
         const form = document.getElementById('leadForm');
         const successMsg = document.getElementById('successMessage');
         const errorMsg = document.getElementById('formError');
