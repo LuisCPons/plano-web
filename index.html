@@ -415,8 +415,8 @@
                         <li><a href="#dashboard" class="hover:text-primary transition-colors">Plataforma Dashboard</a>
                         </li>
                         <li><a href="#precios" class="hover:text-primary transition-colors">Precios y Planes</a></li>
-                        <li><button onclick="toggleModal()" class="hover:text-primary transition-colors">Solicitar
-                                Auditoría</button></li>
+                        <li><button onclick="toggleModal()"
+                                class="hover:text-primary transition-colors text-left">Solicitar Auditoría</button></li>
                     </ul>
                 </div>
 
@@ -424,12 +424,13 @@
                     <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Empresa</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
-                                onclick="alert('PLANO es una plataforma PropTech en fase de lanzamiento 2026 dedicada a la optimización de activos B2B.')"
-                                class="hover:text-primary transition-colors">Sobre PLANO</button></li>
-                        <li><button onclick="toggleModal()" class="hover:text-primary transition-colors">Contacto
-                                Soporte</button></li>
-                        <li><button onclick="alert('Programa de partners próximamente disponible.')"
-                                class="hover:text-primary transition-colors">Partner Program</button></li>
+                                onclick="showInfo('Sobre PLANO', 'PLANO es una plataforma PropTech en fase de lanzamiento 2026 dedicada a la optimización de activos B2B mediante análisis de datos de precisión.')"
+                                class="hover:text-primary transition-colors text-left">Sobre PLANO</button></li>
+                        <li><button onclick="toggleModal()"
+                                class="hover:text-primary transition-colors text-left">Contacto Soporte</button></li>
+                        <li><button
+                                onclick="showInfo('Partner Program', 'Nuestro programa de partners para consultoras e inmobiliarias estará disponible en el Q3 de 2026.')"
+                                class="hover:text-primary transition-colors text-left">Partner Program</button></li>
                     </ul>
                 </div>
 
@@ -437,14 +438,15 @@
                     <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Legal</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
-                                onclick="alert('Tus datos están protegidos bajo encriptación AES-256 y cumplimiento estricto de la RGPD europea.')"
-                                class="hover:text-primary transition-colors">Privacidad RGPD</button></li>
+                                onclick="showInfo('Privacidad RGPD', 'Tus datos están protegidos bajo encriptación AES-256 y cumplimiento estricto de la RGPD europea. No compartimos datos con terceros.')"
+                                class="hover:text-primary transition-colors text-left">Privacidad RGPD</button></li>
                         <li><button
-                                onclick="alert('Los servicios de PLANO están sujetos a contratos de nivel de servicio (SLA) para clientes Pro.')"
-                                class="hover:text-primary transition-colors">Términos de Servicio</button></li>
-                        <li><button onclick="toggleModal()"
-                                class="hover:text-primary font-bold transition-colors">Descargar Borrador NDA</button>
+                                onclick="showInfo('Términos de Servicio', 'Los servicios de PLANO están sujetos a contratos de nivel de servicio (SLA) para garantizar la disponibilidad y precisión del dato.')"
+                                class="hover:text-primary transition-colors text-left">Términos de Servicio</button>
                         </li>
+                        <li><button onclick="toggleModal()"
+                                class="hover:text-primary font-bold transition-colors text-left">Descargar Borrador
+                                NDA</button></li>
                     </ul>
                 </div>
             </div>
@@ -494,11 +496,37 @@
         </div>
     </div>
 
+    <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
+        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl border border-slate-100">
+            <h4 id="infoTitle" class="text-xl font-bold text-primary mb-4"></h4>
+            <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
+            <button onclick="closeInfo()"
+                class="w-full py-3 bg-slate-50 hover:bg-slate-100 text-primary font-bold rounded-xl transition-colors">Entendido</button>
+        </div>
+    </div>
+
     <script>
+        // Gestión del Modal Principal
         function toggleModal() {
             const modal = document.getElementById('demoModal');
             modal.classList.toggle('hidden');
             document.body.classList.toggle('overflow-hidden');
+        }
+
+        // Gestión del Nuevo Modal de Información (Sustituye Alerts)
+        function showInfo(title, content) {
+            document.getElementById('infoTitle').innerText = title;
+            document.getElementById('infoContent').innerText = content;
+            document.getElementById('infoModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeInfo() {
+            document.getElementById('infoModal').classList.add('hidden');
+            if (document.getElementById('demoModal').classList.contains('hidden')) {
+                document.body.classList.remove('overflow-hidden');
+            }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -525,12 +553,13 @@
             });
         });
 
-        // Este script asegura que todos los botones de acción abran el modal
+        // Asegurar que botones abran modal
         document.querySelectorAll('button:not([type="submit"])').forEach(btn => {
             const text = btn.innerText.toLowerCase();
             const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar', 'auditoría', 'solicitar'];
             if (actionWords.some(word => text.includes(word))) {
                 btn.addEventListener('click', (e) => {
+                    if (btn.closest('footer')) return; // Dejar que los del footer usen sus onclicks específicos
                     e.preventDefault();
                     toggleModal();
                 });
