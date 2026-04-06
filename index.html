@@ -67,16 +67,6 @@
             filter: brightness(1.1);
         }
 
-        .bento-card {
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .bento-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-            z-index: 10;
-        }
-
         .hero-text {
             background: linear-gradient(180deg, #1A1C1E 0%, #4F5F79 100%);
             -webkit-background-clip: text;
@@ -135,9 +125,50 @@
             box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
         }
 
-        input[type=range]::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-            background: #10b981;
+        /* EFECTO DE INTERFAZ PROFESIONAL (Sin vídeo roto) */
+        .dashboard-wrapper {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .dashboard-wrapper::after {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(52, 211, 153, 0.05), transparent);
+            animation: scan 6s linear infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                top: -100%;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        .status-dot {
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
         @media (max-width: 640px) {
@@ -151,14 +182,14 @@
 
 <body class="bg-background text-primary font-body antialiased">
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-500">
-        <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 py-5">
+        <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 py-5 text-primary">
             <div class="flex items-center gap-2 group cursor-pointer"
                 onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <span
                     class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:rotate-90 duration-500">architecture</span>
-                <span class="text-xl font-extrabold tracking-tighter font-headline text-primary">PLANO</span>
+                <span class="text-xl font-extrabold tracking-tighter font-headline">PLANO</span>
             </div>
-            <nav class="hidden md:flex gap-10 items-center text-primary">
+            <nav class="hidden md:flex gap-10 items-center">
                 <a class="text-sm font-semibold hover:text-accent transition-colors" href="#dashboard">Plataforma</a>
                 <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
                     href="#precios">Precios</a>
@@ -181,7 +212,7 @@
                     class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-primary rounded-full animate-pulse">OFERTA
                     LANZAMIENTO 2026</span>
                 <h1
-                    class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter hero-text mb-8 leading-none hero-text">
+                    class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter hero-text mb-8 leading-none">
                     Optimiza tu cartera con precisión quirúrgica.</h1>
                 <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Consigue hoy tu
                     <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.</p>
@@ -195,35 +226,11 @@
 
         <section class="py-16 border-y border-slate-100 bg-white overflow-hidden relative z-10">
             <div class="max-w-screen-xl mx-auto px-8 mb-10 text-center text-primary">
-                <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Infraestructura tecnológica
-                    de confianza</p>
+                <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 text-primary">Infraestructura
+                    tecnológica de confianza</p>
             </div>
             <div class="logo-slider-container">
-                <div class="logo-slider grayscale opacity-40 hover:opacity-100 transition-opacity duration-500">
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
-                            alt="Vercel"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                            class="h-8" alt="GitHub"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
-                            alt="Google Cloud"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
-                            alt="Tailwind"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
-                            alt="Vercel"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                            class="h-8" alt="GitHub"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
-                            alt="Google Cloud"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
-                            alt="Tailwind"></div>
+                <div class="logo-slider grayscale opacity-40">
                     <div class="logo-item"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
                             alt="Vercel"></div>
@@ -252,21 +259,21 @@
             </div>
         </section>
 
-        <section id="dashboard" class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100">
-            <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-primary">
+        <section id="dashboard"
+            class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100 relative z-10 text-primary">
+            <div class="max-w-screen-2xl mx-auto px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="animate-on-scroll">
                         <span
-                            class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block italic text-accent">Experiencia
+                            class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block italic">Experiencia
                             PLANO</span>
                         <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Toda tu
                             cartera, bajo un mismo compás.</h2>
                         <p class="text-xl text-slate-500 mb-10 max-w-lg">Nuestra interfaz centraliza datos complejos en
                             una visualización intuitiva. No más búsquedas en cientos de archivos.</p>
                         <ul class="space-y-6">
-                            <li class="flex gap-4 items-start">
-                                <span
-                                    class="material-symbols-outlined text-primary bg-white p-2 rounded-lg shadow-sm">map</span>
+                            <li class="flex gap-4 items-start text-primary">
+                                <span class="material-symbols-outlined bg-white p-2 rounded-lg shadow-sm">map</span>
                                 <div>
                                     <h4 class="font-bold">Geolocalización Inteligente</h4>
                                     <p class="text-sm text-slate-500">Visualiza el rendimiento de tus activos en tiempo
@@ -277,7 +284,13 @@
                     </div>
                     <div class="relative animate-on-scroll">
                         <div
-                            class="relative z-10 rounded-2xl shadow-[0_50px_100px_rgba(0,0,0,0.15)] overflow-hidden transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 bg-white border border-slate-100">
+                            class="absolute top-6 right-6 z-30 flex items-center gap-3 bg-black/90 backdrop-blur px-4 py-2 rounded-full border border-white/10 shadow-2xl">
+                            <span class="w-2 h-2 bg-emerald-500 rounded-full status-dot"></span>
+                            <span class="text-[9px] font-bold text-white tracking-[0.2em] uppercase">Monitorización
+                                Activa</span>
+                        </div>
+                        <div
+                            class="dashboard-wrapper shadow-[0_50px_100px_rgba(0,0,0,0.15)] transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 bg-white border border-slate-200">
                             <img src="dashboard.png" alt="PLANO dashboard" class="w-full h-auto">
                         </div>
                     </div>
@@ -285,36 +298,36 @@
             </div>
         </section>
 
-        <section class="py-24 bg-white border-b border-slate-100 relative z-10">
-            <div class="max-w-screen-xl mx-auto px-8 relative z-10">
+        <section class="py-24 bg-white border-b border-slate-100 relative z-10 text-primary">
+            <div class="max-w-screen-xl mx-auto px-8">
                 <div class="text-center mb-20 animate-on-scroll text-primary">
                     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4">Tu optimización en tres pasos
                     </h2>
                     <p class="text-slate-500 text-lg">De datos crudos a decisiones estratégicas en menos de 24 horas.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative text-primary">
-                    <div class="relative z-10 animate-on-scroll text-primary">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                    <div class="relative z-10 animate-on-scroll">
                         <div
-                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
+                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
                             1</div>
                         <h4 class="text-xl font-bold mb-3">Conexión Segura</h4>
                         <p class="text-slate-500 text-sm leading-relaxed">Firma nuestro <strong>NDA digital</strong> y
                             comparte tu cartera (Excel/PDF).</p>
                     </div>
-                    <div class="relative z-10 animate-on-scroll text-primary" style="transition-delay: 200ms;">
+                    <div class="relative z-10 animate-on-scroll" style="transition-delay: 200ms;">
                         <div
-                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
+                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
                             2</div>
                         <h4 class="text-xl font-bold mb-3">Análisis de Precisión</h4>
                         <p class="text-slate-500 text-sm leading-relaxed">Nuestro motor detecta fugas de rentabilidad y
                             oportunidades ocultas.</p>
                     </div>
-                    <div class="relative z-10 animate-on-scroll text-primary" style="transition-delay: 400ms;">
+                    <div class="relative z-10 animate-on-scroll" style="transition-delay: 400ms;">
                         <div
-                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
+                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
                             3</div>
-                        <h4 class="text-xl font-bold mb-3">Entrega Estratégica</h4>
+                        <h4 class="text-xl font-bold mb-3 text-primary">Entrega Estratégica</h4>
                         <p class="text-slate-500 text-sm leading-relaxed">Recibes tu <strong>Dashboard activo</strong> y
                             un reporte táctico inmediato.</p>
                     </div>
@@ -323,25 +336,25 @@
             </div>
         </section>
 
-        <section class="py-32 bg-slate-900 text-white overflow-hidden relative z-10">
+        <section class="py-32 bg-slate-900 text-white overflow-hidden relative z-10 text-primary">
             <div class="max-w-screen-xl mx-auto px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div>
-                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight text-white">
-                            ¿Cuánto dinero estás dejando de percibir?</h2>
+                    <div class="text-white">
+                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">¿Cuánto
+                            dinero estás dejando de percibir?</h2>
                         <div class="space-y-12">
                             <div>
                                 <div class="flex justify-between mb-6"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Número de
-                                        Activos</span><span id="units-val"
-                                        class="text-3xl font-black text-white">50</span></div>
+                                        class="text-sm font-bold uppercase tracking-widest text-slate-500 text-primary">Número
+                                        de Activos</span><span id="units-val" class="text-3xl font-black">50</span>
+                                </div>
                                 <input type="range" id="units" min="1" max="200" value="50">
                             </div>
                             <div>
                                 <div class="flex justify-between mb-6"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Renta Mensual
-                                        Media (€)</span><span id="rent-val"
-                                        class="text-3xl font-black text-white">1.200€</span></div>
+                                        class="text-sm font-bold uppercase tracking-widest text-slate-500 text-primary">Renta
+                                        Mensual Media (€)</span><span id="rent-val"
+                                        class="text-3xl font-black">1.200€</span></div>
                                 <input type="range" id="rent" min="500" max="5000" step="50" value="1200">
                             </div>
                         </div>
@@ -361,12 +374,12 @@
 
         <section class="py-32 bg-white relative z-10 text-primary">
             <div class="max-w-screen-xl mx-auto px-8 text-primary">
-                <div class="flex flex-col lg:flex-row items-center gap-20 text-primary">
+                <div class="flex flex-col lg:flex-row items-center gap-20">
                     <div class="w-full lg:w-1/3 animate-on-scroll">
                         <div class="relative">
                             <div
                                 class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white border border-slate-100">
-                                <img src="luis.png" alt="Luis Cañadilla Pons - Fundador de PLANO"
+                                <img src="luis.png" alt="Luis Cañadilla Pons"
                                     class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                                     onerror="this.src='https://via.placeholder.com/600x750?text=Luis'">
                             </div>
@@ -376,26 +389,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full lg:w-2/3 animate-on-scroll text-primary text-primary"
-                        style="transition-delay: 200ms;">
-                        <span class="text-emerald-500 font-bold text-sm uppercase tracking-widest mb-4 block">Precisión
+                    <div class="w-full lg:w-2/3 animate-on-scroll text-primary" style="transition-delay: 200ms;">
+                        <span
+                            class="text-emerald-500 font-bold text-sm uppercase tracking-widest mb-4 block text-emerald-500">Precisión
                             que nace de la visión</span>
                         <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Humanizando
                             el dato inmobiliario.</h2>
-                        <div class="space-y-6 text-lg text-slate-500 max-w-2xl text-primary text-primary">
+                        <div class="space-y-6 text-lg text-slate-500 max-w-2xl text-primary">
                             <p>“Fundé <strong>PLANO</strong> tras observar cómo el Asset Management tradicional perdía
                                 millones en ineficiencias invisibles. Mi objetivo es que cada metro cuadrado rinda al
                                 máximo mediante la tecnología.”</p>
-                            <p>En un sector basado en la confianza, mi compromiso es la transparencia total. No somos
-                                solo un algoritmo; somos tu socio estratégico en la optimización de tu patrimonio.</p>
                         </div>
                         <div class="mt-12 text-primary">
-                            <div class="mt-4">
-                                <p class="text-primary font-black text-2xl tracking-tight uppercase">Luis Cañadilla Pons
-                                </p>
-                                <p class="text-slate-400 text-sm uppercase tracking-widest font-bold">Founder & Head of
-                                    Operations</p>
-                            </div>
+                            <p class="text-primary font-black text-2xl tracking-tight uppercase">Luis Cañadilla Pons</p>
+                            <p class="text-slate-400 text-sm uppercase tracking-widest font-bold">Founder & Head of
+                                Operations</p>
                         </div>
                     </div>
                 </div>
@@ -403,7 +411,7 @@
         </section>
 
         <section class="py-20 bg-slate-50 border-y border-slate-100 relative z-10 text-primary">
-            <div class="max-w-screen-xl mx-auto px-8 text-primary text-primary">
+            <div class="max-w-screen-xl mx-auto px-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12 text-primary">
                     <div class="flex-1 text-primary">
                         <div class="flex items-center gap-3 mb-6">
@@ -414,10 +422,10 @@
                         <p class="text-slate-500 max-w-2xl">Cumplimiento estricto con la normativa RGPD europea y
                             encriptación AES-256.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-primary">
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
                         <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Garantía de
                             Privacidad</p>
-                        <h4 class="font-bold mb-2 italic text-primary">"Firmamos un NDA antes de tu Auditoría"</h4>
+                        <h4 class="font-bold mb-2 italic">"Firmamos un NDA antes de tu Auditoría"</h4>
                         <p class="text-sm text-slate-500">Protegemos tu información mediante Acuerdos de
                             Confidencialidad.</p>
                     </div>
@@ -429,7 +437,7 @@
             <div class="max-w-screen-2xl mx-auto text-center mb-20 text-primary">
                 <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6">Inversión en
                     Eficiencia</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left text-primary">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
                     <div
                         class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary">
                         <div>
@@ -437,11 +445,11 @@
                                 Starter Lite</h4>
                             <div class="text-4xl font-black mb-6">149€ <span class="text-lg font-normal">/mes</span>
                             </div>
-                            <ul class="text-sm text-slate-500 space-y-3 mb-10 text-primary">
-                                <li class="flex items-center gap-2 text-primary"><span
+                            <ul class="text-sm text-slate-500 space-y-3 mb-10">
+                                <li class="flex items-center gap-2"><span
                                         class="material-symbols-outlined text-primary text-xs">check</span> Hasta 10
                                     activos</li>
-                                <li class="flex items-center gap-2 text-primary"><span
+                                <li class="flex items-center gap-2"><span
                                         class="material-symbols-outlined text-primary text-xs">check</span> Auditoría
                                     mensual</li>
                             </ul>
@@ -455,8 +463,8 @@
                         <div class="absolute top-5 right-5 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold">
                             POPULAR</div>
                         <div>
-                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest text-white">Real
-                                Estate Pro</h4>
+                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest">Real Estate Pro
+                            </h4>
                             <div class="text-4xl font-black mb-6">490€ <span
                                     class="text-lg font-normal text-white/60">/mes</span></div>
                             <ul class="text-sm text-white/70 space-y-3 mb-10 text-white">
@@ -477,7 +485,7 @@
                         <div>
                             <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-primary">
                                 Global</h4>
-                            <div class="text-4xl font-black mb-6 text-primary">Custom</div>
+                            <div class="text-4xl font-black mb-6">Custom</div>
                         </div>
                         <button onclick="toggleModal()"
                             class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Contactar</button>
@@ -488,7 +496,7 @@
     </main>
 
     <footer class="bg-white py-24 border-t border-slate-100 relative z-10 text-primary">
-        <div class="max-w-screen-2xl mx-auto px-8 text-primary">
+        <div class="max-w-screen-2xl mx-auto px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-primary">
                 <div class="col-span-1 text-primary">
                     <div class="flex items-center gap-2 mb-6"><span
@@ -498,21 +506,19 @@
                         for Asset Managers.</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Producto</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary text-primary">Producto</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
-                        <li><a href="#dashboard"
-                                class="hover:text-primary transition-colors text-primary">Plataforma</a></li>
-                        <li><a href="#precios" class="hover:text-primary transition-colors text-primary">Precios</a>
-                        </li>
+                        <li><a href="#dashboard" class="hover:text-primary transition-colors">Plataforma</a></li>
+                        <li><a href="#precios" class="hover:text-primary transition-colors">Precios</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Empresa</h5>
-                    <ul class="text-sm text-slate-500 space-y-4">
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary text-primary">Empresa</h5>
+                    <ul class="text-sm text-slate-500 space-y-4 text-primary">
                         <li><button
                                 onclick="showInfo('Sobre PLANO', 'PLANO es una plataforma PropTech en fase de lanzamiento 2026.')"
-                                class="hover:text-primary transition-colors text-left text-primary">Sobre PLANO</button>
-                        </li>
+                                class="hover:text-primary transition-colors text-left text-primary text-primary">Sobre
+                                PLANO</button></li>
                     </ul>
                 </div>
                 <div>
@@ -523,8 +529,8 @@
                                 class="hover:text-primary transition-colors text-left text-primary">Privacidad
                                 RGPD</button></li>
                         <li><a href="NDA_PLANO_Audit.pdf" target="_blank"
-                                class="hover:text-primary font-bold transition-colors text-left text-primary">Descargar
-                                Borrador NDA</a></li>
+                                class="hover:text-primary font-bold transition-colors text-left">Descargar Borrador
+                                NDA</a></li>
                     </ul>
                 </div>
             </div>
@@ -543,7 +549,7 @@
             <button onclick="toggleModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary"><span
                     class="material-symbols-outlined">close</span></button>
             <div class="mb-8 text-primary">
-                <h3 class="text-3xl font-extrabold tracking-tighter mb-2 text-primary">Solicita tu Auditoría</h3>
+                <h3 class="text-3xl font-extrabold tracking-tighter mb-2">Solicita tu Auditoría</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">Recibe tu reporte táctico y acceso al Dashboard
                     activo.</p>
             </div>
@@ -559,7 +565,7 @@
                     class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg">Enviar y
                     recibir NDA</button>
             </form>
-            <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary">
+            <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary text-primary">
                 <span class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
                 <h3 class="text-2xl font-bold mb-2">Solicitud Recibida</h3>
                 <p class="text-slate-500">Te hemos enviado el NDA firmado para comenzar.</p>
@@ -569,16 +575,16 @@
 
     <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
         <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
-        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary">
-            <h4 id="infoTitle" class="text-xl font-bold mb-4 text-primary"></h4>
+        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary text-primary">
+            <h4 id="infoTitle" class="text-xl font-bold mb-4"></h4>
             <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
             <button onclick="closeInfo()"
-                class="w-full py-3 bg-slate-50 hover:bg-slate-100 font-bold rounded-xl transition-colors text-primary">Entendido</button>
+                class="w-full py-3 bg-slate-50 hover:bg-slate-100 font-bold rounded-xl transition-colors">Entendido</button>
         </div>
     </div>
 
     <script>
-        // Calculadora de Fuga
+        // Calculadora
         const unitsInput = document.getElementById('units');
         const rentInput = document.getElementById('rent');
         const leakDisplay = document.getElementById('leak-total');
@@ -597,7 +603,7 @@
         unitsInput.addEventListener('input', updateCalculator);
         rentInput.addEventListener('input', updateCalculator);
 
-        // Modales y Navegación
+        // Modales
         function toggleModal() {
             const modal = document.getElementById('demoModal');
             modal.classList.toggle('hidden');
@@ -620,9 +626,7 @@
             updateCalculator();
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
                 });
             }, { threshold: 0.1 });
 
