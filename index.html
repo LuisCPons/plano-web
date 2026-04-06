@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
@@ -257,7 +257,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-primary">
                     <div class="animate-on-scroll">
                         <span
-                            class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block italic">Experiencia
+                            class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block italic text-accent">Experiencia
                             PLANO</span>
                         <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Toda tu
                             cartera, bajo un mismo compás.</h2>
@@ -327,28 +327,26 @@
             <div class="max-w-screen-xl mx-auto px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div>
-                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight hero-text">
+                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight text-white">
                             ¿Cuánto dinero estás dejando de percibir?</h2>
-                        <div class="space-y-12 hero-text">
+                        <div class="space-y-12">
                             <div>
-                                <div class="flex justify-between mb-6 hero-text"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-primary">Número de
+                                <div class="flex justify-between mb-6"><span
+                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Número de
                                         Activos</span><span id="units-val"
-                                        class="text-3xl font-black text-white hero-text">50</span></div>
+                                        class="text-3xl font-black text-white">50</span></div>
                                 <input type="range" id="units" min="1" max="200" value="50">
                             </div>
                             <div>
-                                <div class="flex justify-between mb-6 hero-text hero-text"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-primary">Renta Mensual
+                                <div class="flex justify-between mb-6"><span
+                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Renta Mensual
                                         Media (€)</span><span id="rent-val"
-                                        class="text-3xl font-black text-white hero-text hero-text">1.200€</span></div>
+                                        class="text-3xl font-black text-white">1.200€</span></div>
                                 <input type="range" id="rent" min="500" max="5000" step="50" value="1200">
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10 text-center relative overflow-hidden">
-                        <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/10 blur-3xl rounded-full"></div>
+                    <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10 text-center">
                         <span class="text-emerald-400 font-bold text-sm uppercase tracking-[0.2em] mb-6 block">Fuga de
                             Rentabilidad Anual Estimada</span>
                         <div id="leak-total"
@@ -368,9 +366,9 @@
                         <div class="relative">
                             <div
                                 class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white border border-slate-100">
-                                <img src="luis.png" alt="Luis - Fundador de PLANO"
+                                <img src="luis.png" alt="Luis Cañadilla Pons - Fundador de PLANO"
                                     class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                                    onerror="this.src='https://via.placeholder.com/600x750?text=Luis+-+Fundador'">
+                                    onerror="this.src='https://via.placeholder.com/600x750?text=Luis'">
                             </div>
                             <div
                                 class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary rounded-2xl flex items-center justify-center p-6 shadow-xl">
@@ -392,10 +390,9 @@
                                 solo un algoritmo; somos tu socio estratégico en la optimización de tu patrimonio.</p>
                         </div>
                         <div class="mt-12 text-primary">
-                            <div class="font-signature text-6xl text-primary opacity-80 select-none"
-                                style="font-family: 'Great Vibes', cursive;">Luis C.P.</div>
                             <div class="mt-4">
-                                <p class="text-primary font-black text-xl tracking-tight">Luis C.P.</p>
+                                <p class="text-primary font-black text-2xl tracking-tight uppercase">Luis Cañadilla Pons
+                                </p>
                                 <p class="text-slate-400 text-sm uppercase tracking-widest font-bold">Founder & Head of
                                     Operations</p>
                             </div>
@@ -406,9 +403,9 @@
         </section>
 
         <section class="py-20 bg-slate-50 border-y border-slate-100 relative z-10 text-primary">
-            <div class="max-w-screen-xl mx-auto px-8 text-primary">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-12 text-primary text-primary">
-                    <div class="flex-1 text-primary text-primary text-primary">
+            <div class="max-w-screen-xl mx-auto px-8 text-primary text-primary">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12 text-primary">
+                    <div class="flex-1 text-primary">
                         <div class="flex items-center gap-3 mb-6">
                             <span class="material-symbols-outlined text-emerald-500 text-3xl">verified_user</span>
                             <h3 class="text-2xl font-bold tracking-tight uppercase">Seguridad de Nivel Institucional
@@ -417,10 +414,10 @@
                         <p class="text-slate-500 max-w-2xl">Cumplimiento estricto con la normativa RGPD europea y
                             encriptación AES-256.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-primary text-primary">
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-primary">
                         <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Garantía de
                             Privacidad</p>
-                        <h4 class="font-bold mb-2 italic">"Firmamos un NDA antes de tu Auditoría"</h4>
+                        <h4 class="font-bold mb-2 italic text-primary">"Firmamos un NDA antes de tu Auditoría"</h4>
                         <p class="text-sm text-slate-500">Protegemos tu información mediante Acuerdos de
                             Confidencialidad.</p>
                     </div>
@@ -429,22 +426,22 @@
         </section>
 
         <section id="precios" class="animate-on-scroll section-padding py-32 bg-white relative z-10 text-primary">
-            <div class="max-w-screen-2xl mx-auto text-center mb-20 text-primary text-primary">
+            <div class="max-w-screen-2xl mx-auto text-center mb-20 text-primary">
                 <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6">Inversión en
                     Eficiencia</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left text-primary text-primary">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left text-primary">
                     <div
-                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary text-primary text-primary">
+                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary">
                         <div>
                             <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-primary">
                                 Starter Lite</h4>
                             <div class="text-4xl font-black mb-6">149€ <span class="text-lg font-normal">/mes</span>
                             </div>
-                            <ul class="text-sm text-slate-500 space-y-3 mb-10 text-primary text-primary">
-                                <li class="flex items-center gap-2 text-primary text-primary"><span
+                            <ul class="text-sm text-slate-500 space-y-3 mb-10 text-primary">
+                                <li class="flex items-center gap-2 text-primary"><span
                                         class="material-symbols-outlined text-primary text-xs">check</span> Hasta 10
                                     activos</li>
-                                <li class="flex items-center gap-2 text-primary text-primary"><span
+                                <li class="flex items-center gap-2 text-primary"><span
                                         class="material-symbols-outlined text-primary text-xs">check</span> Auditoría
                                     mensual</li>
                             </ul>
@@ -454,16 +451,15 @@
                             ahora</button>
                     </div>
                     <div
-                        class="p-10 rounded-3xl bg-primary text-white shadow-2xl bento-card flex flex-col justify-between relative text-white text-white">
+                        class="p-10 rounded-3xl bg-primary text-white shadow-2xl bento-card flex flex-col justify-between relative text-white">
                         <div class="absolute top-5 right-5 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold">
                             POPULAR</div>
                         <div>
-                            <h4
-                                class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest text-white text-white">
-                                Real Estate Pro</h4>
+                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest text-white">Real
+                                Estate Pro</h4>
                             <div class="text-4xl font-black mb-6">490€ <span
                                     class="text-lg font-normal text-white/60">/mes</span></div>
-                            <ul class="text-sm text-white/70 space-y-3 mb-10">
+                            <ul class="text-sm text-white/70 space-y-3 mb-10 text-white">
                                 <li class="flex items-center gap-2"><span
                                         class="material-symbols-outlined text-white text-xs">check</span> Activos
                                     ilimitados</li>
@@ -477,7 +473,7 @@
                             Pro</button>
                     </div>
                     <div
-                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary text-primary text-primary text-primary text-primary">
+                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary">
                         <div>
                             <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-primary">
                                 Global</h4>
@@ -491,47 +487,43 @@
         </section>
     </main>
 
-    <footer class="bg-white py-24 border-t border-slate-100 relative z-10 text-primary text-primary">
-        <div class="max-w-screen-2xl mx-auto px-8 text-primary text-primary text-primary">
-            <div
-                class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-primary text-primary text-primary text-primary">
-                <div class="col-span-1 text-primary text-primary text-primary">
+    <footer class="bg-white py-24 border-t border-slate-100 relative z-10 text-primary">
+        <div class="max-w-screen-2xl mx-auto px-8 text-primary">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-primary">
+                <div class="col-span-1 text-primary">
                     <div class="flex items-center gap-2 mb-6"><span
                             class="material-symbols-outlined text-primary text-2xl">architecture</span><span
                             class="text-xl font-bold tracking-tighter">PLANO</span></div>
-                    <p class="text-slate-400 text-sm">Precisión quirúrgica en Real Estate. Built with AI for Asset
-                        Managers.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Precisión quirúrgica en Real Estate. Built with AI
+                        for Asset Managers.</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary text-primary">Producto</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Producto</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><a href="#dashboard"
-                                class="hover:text-primary transition-colors text-primary text-primary">Plataforma</a>
+                                class="hover:text-primary transition-colors text-primary">Plataforma</a></li>
+                        <li><a href="#precios" class="hover:text-primary transition-colors text-primary">Precios</a>
                         </li>
-                        <li><a href="#precios"
-                                class="hover:text-primary transition-colors text-primary text-primary">Precios</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary text-primary text-primary">
-                        Empresa</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Empresa</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
                                 onclick="showInfo('Sobre PLANO', 'PLANO es una plataforma PropTech en fase de lanzamiento 2026.')"
-                                class="hover:text-primary transition-colors text-left text-primary text-primary text-primary">Sobre
-                                PLANO</button></li>
+                                class="hover:text-primary transition-colors text-left text-primary">Sobre PLANO</button>
+                        </li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary text-primary text-primary">
-                        Legal</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Legal</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
                                 onclick="showInfo('Privacidad', 'Tus datos están protegidos bajo encriptación AES-256.')"
-                                class="hover:text-primary transition-colors text-left text-primary text-primary">Privacidad
+                                class="hover:text-primary transition-colors text-left text-primary">Privacidad
                                 RGPD</button></li>
                         <li><a href="NDA_PLANO_Audit.pdf" target="_blank"
-                                class="hover:text-primary font-bold transition-colors text-left text-primary text-primary">Descargar
+                                class="hover:text-primary font-bold transition-colors text-left text-primary">Descargar
                                 Borrador NDA</a></li>
                     </ul>
                 </div>
@@ -550,31 +542,26 @@
         <div class="relative bg-white w-full max-w-lg rounded-3xl p-10 shadow-2xl">
             <button onclick="toggleModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary"><span
                     class="material-symbols-outlined">close</span></button>
-            <div class="mb-8 text-primary text-primary">
-                <h3 class="text-3xl font-extrabold tracking-tighter mb-2 text-primary text-primary text-primary">
-                    Solicita tu Auditoría</h3>
+            <div class="mb-8 text-primary">
+                <h3 class="text-3xl font-extrabold tracking-tighter mb-2 text-primary">Solicita tu Auditoría</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">Recibe tu reporte táctico y acceso al Dashboard
                     activo.</p>
             </div>
-            <form id="leadForm" class="space-y-4 text-primary text-primary text-primary text-primary"
-                action="https://formspree.io/f/xkopkzla" method="POST">
+            <form id="leadForm" class="space-y-4 text-primary" action="https://formspree.io/f/xkopkzla" method="POST">
                 <input type="text" name="name" required
-                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary text-primary"
-                    placeholder="Nombre completo">
+                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Nombre completo">
                 <input type="text" name="company" required
-                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary text-primary"
+                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary"
                     placeholder="Empresa / Asset Manager">
                 <input type="email" name="email" required
-                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary text-primary text-primary"
-                    placeholder="Email corporativo">
+                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Email corporativo">
                 <button type="submit"
                     class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg">Enviar y
                     recibir NDA</button>
             </form>
-            <div id="successMessage"
-                class="hidden flex-col items-center py-8 text-center text-primary text-primary text-primary">
+            <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary">
                 <span class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
-                <h3 class="text-2xl font-bold mb-2 text-primary text-primary">Solicitud Recibida</h3>
+                <h3 class="text-2xl font-bold mb-2">Solicitud Recibida</h3>
                 <p class="text-slate-500">Te hemos enviado el NDA firmado para comenzar.</p>
             </div>
         </div>
@@ -582,12 +569,11 @@
 
     <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
         <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
-        <div
-            class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary text-primary text-primary">
-            <h4 id="infoTitle" class="text-xl font-bold mb-4 text-primary text-primary text-primary text-primary"></h4>
+        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary">
+            <h4 id="infoTitle" class="text-xl font-bold mb-4 text-primary"></h4>
             <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
             <button onclick="closeInfo()"
-                class="w-full py-3 bg-slate-50 hover:bg-slate-100 font-bold rounded-xl transition-colors">Entendido</button>
+                class="w-full py-3 bg-slate-50 hover:bg-slate-100 font-bold rounded-xl transition-colors text-primary">Entendido</button>
         </div>
     </div>
 
