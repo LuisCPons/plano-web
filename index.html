@@ -308,35 +308,6 @@
             </div>
         </section>
 
-        <section class="animate-on-scroll section-padding py-32 max-w-screen-2xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                <div
-                    class="md:col-span-8 bento-card bg-slate-900 text-white rounded-3xl p-10 md:p-16 relative overflow-hidden group">
-                    <div class="relative z-10 max-w-xl">
-                        <span class="material-symbols-outlined text-emerald-400 text-5xl mb-8">analytics</span>
-                        <h3 class="text-4xl md:text-5xl font-headline font-extrabold mb-6 leading-tight text-white">
-                            Detecta fugas de rentabilidad en segundos.</h3>
-                        <p class="text-slate-400 text-lg mb-8">Análisis de <strong>Yield Gap</strong> e IPC incluido.
-                            Resaltamos automáticamente las áreas donde puedes aumentar el margen de beneficio hasta un
-                            15%.</p>
-                        <div class="flex items-center gap-4 text-emerald-400 font-bold">
-                            <span class="text-sm uppercase tracking-widest text-emerald-400">Incluido en tu Reporte de
-                                Auditoría</span>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="md:col-span-4 bento-card bg-white border border-slate-100 rounded-3xl p-10 flex flex-col justify-between">
-                    <div>
-                        <span class="material-symbols-outlined text-accent text-4xl mb-6">description</span>
-                        <h3 class="text-2xl font-headline font-bold mb-4 text-primary">Semáforo de Riesgos</h3>
-                        <p class="text-slate-500 text-sm">Identifica activos críticos de un vistazo y prioriza tus
-                            esfuerzos de gestión donde más importa.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="precios" class="animate-on-scroll section-padding py-32 bg-white">
             <div class="max-w-screen-2xl mx-auto text-center mb-20">
                 <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6 text-primary">
@@ -443,27 +414,25 @@
                     <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Legal</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
-                                onclick="showInfo('Privacidad RGPD', 'Tus datos están protegidos bajo encriptación AES-256 y cumplimiento estricto de la RGPD europea. No compartimos datos con terceros.')"
+                                onclick="showInfo('Privacidad RGPD', 'Tus datos están protegidos bajo encriptación AES-256 y cumplimiento estricto de la RGPD europea.')"
                                 class="hover:text-primary transition-colors text-left">Privacidad RGPD</button></li>
                         <li><button
-                                onclick="showInfo('Términos de Servicio', 'Los servicios de PLANO están sujetos a contratos de nivel de servicio (SLA) para garantizar la disponibilidad y precisión del dato.')"
+                                onclick="showInfo('Términos de Servicio', 'Los servicios de PLANO están sujetos a contratos de nivel de servicio (SLA) para garantizar la disponibilidad del dato.')"
                                 class="hover:text-primary transition-colors text-left">Términos de Servicio</button>
                         </li>
-                        <li><button onclick="toggleModal()"
+                        <li><a href="NDA_PLANO_Audit.pdf" target="_blank"
                                 class="hover:text-primary font-bold transition-colors text-left">Descargar Borrador
-                                NDA</button></li>
+                                NDA</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-slate-400 text-xs">© 2026 PLANO Asset Management Technologies. All rights reserved.</p>
-                <div class="flex items-center gap-6">
-                    <span
-                        class="text-[10px] font-bold text-slate-300 uppercase tracking-widest flex items-center gap-2">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full"></span> System Status: Online
-                    </span>
-                </div>
+            <div
+                class="pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-xs">
+                <p>© 2026 PLANO Asset Management Technologies. All rights reserved.</p>
+                <span class="flex items-center gap-2 font-bold text-slate-300 uppercase tracking-widest">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full"></span> System Status: Online
+                </span>
             </div>
         </div>
     </footer>
@@ -475,18 +444,13 @@
                     class="material-symbols-outlined">close</span></button>
             <div class="mb-8">
                 <h3 class="text-3xl font-extrabold tracking-tighter mb-2">Solicita tu Auditoría</h3>
-                <p class="text-slate-500 text-sm">Recibe tu reporte de rentabilidad y acceso al dashboard en 24h.</p>
+                <p class="text-slate-500 text-sm">Recibe tu reporte y acceso al dashboard en 24h.</p>
             </div>
             <form id="leadForm" class="space-y-4" action="https://formspree.io/f/xkopkzla" method="POST">
                 <input type="text" name="full_name" required class="w-full bg-slate-50 border-none rounded-xl p-4"
                     placeholder="Nombre completo">
                 <input type="text" name="company" required class="w-full bg-slate-50 border-none rounded-xl p-4"
-                    placeholder="Empresa / Asset Manager">
-                <select name="plan_interes" class="w-full bg-slate-50 border-none rounded-xl p-4 text-slate-600">
-                    <option value="audit_only">Solo Auditoría Gratis</option>
-                    <option value="starter_lite">Plan Starter (149€)</option>
-                    <option value="pro_scale">Plan Pro (490€)</option>
-                </select>
+                    placeholder="Empresa">
                 <input type="email" name="email" required class="w-full bg-slate-50 border-none rounded-xl p-4"
                     placeholder="Email corporativo">
                 <button type="submit"
@@ -496,14 +460,14 @@
             <div id="successMessage" class="hidden flex-col items-center py-8 text-center">
                 <span class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
                 <h3 class="text-2xl font-bold mb-2 text-primary">Solicitud Recibida</h3>
-                <p class="text-slate-500">Revisa tu bandeja de entrada. Te hemos enviado el NDA para comenzar.</p>
+                <p class="text-slate-500">Te hemos enviado el NDA para comenzar.</p>
             </div>
         </div>
     </div>
 
-    <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4">
+    <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
         <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
-        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl border border-slate-100">
+        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl">
             <h4 id="infoTitle" class="text-xl font-bold text-primary mb-4"></h4>
             <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
             <button onclick="closeInfo()"
@@ -515,11 +479,7 @@
         function toggleModal() {
             const modal = document.getElementById('demoModal');
             modal.classList.toggle('hidden');
-            if (!modal.classList.contains('hidden')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
+            document.body.style.overflow = modal.classList.contains('hidden') ? 'auto' : 'hidden';
         }
 
         function showInfo(title, content) {
@@ -531,18 +491,13 @@
 
         function closeInfo() {
             document.getElementById('infoModal').classList.add('hidden');
-            if (document.getElementById('demoModal').classList.contains('hidden')) {
-                document.body.style.overflow = 'auto';
-            }
+            if (document.getElementById('demoModal').classList.contains('hidden')) document.body.style.overflow = 'auto';
         }
 
         document.addEventListener("DOMContentLoaded", () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-10');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
                 });
             }, { threshold: 0.1 });
 
@@ -553,38 +508,10 @@
 
             window.addEventListener('scroll', () => {
                 const nav = document.getElementById('navbar');
-                if (nav) {
-                    if (window.scrollY > 50) nav.classList.add('glass-nav-scrolled');
-                    else nav.classList.remove('glass-nav-scrolled');
-                }
+                if (window.scrollY > 50) nav.classList.add('glass-nav-scrolled');
+                else nav.classList.remove('glass-nav-scrolled');
             });
         });
-
-        const form = document.getElementById('leadForm');
-        if (form) {
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                const btn = e.target.querySelector('button[type="submit"]');
-                btn.innerText = "Procesando...";
-                btn.disabled = true;
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (response.ok) {
-                        form.classList.add('hidden');
-                        document.getElementById('successMessage').classList.remove('hidden');
-                        document.querySelector('#demoModal .mb-8').classList.add('hidden');
-                    }
-                } catch (error) {
-                    btn.innerText = "Enviar y recibir NDA";
-                    btn.disabled = false;
-                    alert("Error al enviar. Por favor, inténtalo de nuevo.");
-                }
-            });
-        }
     </script>
 </body>
 
