@@ -41,6 +41,10 @@
     </script>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         p {
             line-height: 1.75 !important;
             color: #475569;
@@ -123,10 +127,10 @@
                 <span class="text-xl font-extrabold tracking-tighter font-headline">PLANO</span>
             </div>
             <nav class="hidden md:flex gap-10 items-center">
-                <a class="text-sm font-semibold hover:text-accent transition-colors" href="#">Plataforma</a>
+                <a class="text-sm font-semibold hover:text-accent transition-colors" href="#dashboard">Plataforma</a>
                 <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
                     href="#precios">Precios</a>
-                <button
+                <button onclick="toggleModal()"
                     class="interactive-btn bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/10">Auditoría
                     Gratis</button>
             </nav>
@@ -152,7 +156,7 @@
                     tus activos inmobiliarios.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                    <button
+                    <button onclick="toggleModal()"
                         class="interactive-btn bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg">Solicitar
                         Auditoría gratuita</button>
                 </div>
@@ -194,7 +198,7 @@
             </div>
         </section>
 
-        <section class="py-32 section-padding bg-slate-50 overflow-hidden">
+        <section id="dashboard" class="py-32 section-padding bg-slate-50 overflow-hidden">
             <div class="max-w-screen-2xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="animate-on-scroll">
@@ -352,7 +356,8 @@
                                     mensual</li>
                             </ul>
                         </div>
-                        <button class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Empezar
+                        <button onclick="toggleModal()"
+                            class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Empezar
                             ahora</button>
                     </div>
                     <div
@@ -372,7 +377,8 @@
                                     OPEX Avanzado</li>
                             </ul>
                         </div>
-                        <button class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
+                        <button onclick="toggleModal()"
+                            class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
                             Pro</button>
                     </div>
                     <div class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between">
@@ -381,7 +387,7 @@
                             <div class="text-4xl font-black mb-6 text-primary">Custom</div>
                             <p class="text-sm text-slate-500 mb-10">Para grandes carteras y fondos institucionales.</p>
                         </div>
-                        <button
+                        <button onclick="toggleModal()"
                             class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Contactar</button>
                     </div>
                 </div>
@@ -406,28 +412,39 @@
                 <div>
                     <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Producto</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
-                        <li><a href="#" class="hover:text-primary transition-colors">Plataforma Dashboard</a></li>
+                        <li><a href="#dashboard" class="hover:text-primary transition-colors">Plataforma Dashboard</a>
+                        </li>
                         <li><a href="#precios" class="hover:text-primary transition-colors">Precios y Planes</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Solicitar Auditoría</a></li>
+                        <li><button onclick="toggleModal()" class="hover:text-primary transition-colors">Solicitar
+                                Auditoría</button></li>
                     </ul>
                 </div>
 
                 <div>
                     <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Empresa</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
-                        <li><a href="#" class="hover:text-primary transition-colors">Sobre PLANO</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Contacto Soporte</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Partner Program</a></li>
+                        <li><button
+                                onclick="alert('PLANO es una plataforma PropTech en fase de lanzamiento 2026 dedicada a la optimización de activos B2B.')"
+                                class="hover:text-primary transition-colors">Sobre PLANO</button></li>
+                        <li><button onclick="toggleModal()" class="hover:text-primary transition-colors">Contacto
+                                Soporte</button></li>
+                        <li><button onclick="alert('Programa de partners próximamente disponible.')"
+                                class="hover:text-primary transition-colors">Partner Program</button></li>
                     </ul>
                 </div>
 
                 <div>
                     <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Legal</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
-                        <li><a href="#" class="hover:text-primary transition-colors">Privacidad RGPD</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Términos de Servicio</a></li>
-                        <li><a href="#" class="hover:text-primary font-bold transition-colors">Descargar Borrador
-                                NDA</a></li>
+                        <li><button
+                                onclick="alert('Tus datos están protegidos bajo encriptación AES-256 y cumplimiento estricto de la RGPD europea.')"
+                                class="hover:text-primary transition-colors">Privacidad RGPD</button></li>
+                        <li><button
+                                onclick="alert('Los servicios de PLANO están sujetos a contratos de nivel de servicio (SLA) para clientes Pro.')"
+                                class="hover:text-primary transition-colors">Términos de Servicio</button></li>
+                        <li><button onclick="toggleModal()"
+                                class="hover:text-primary font-bold transition-colors">Descargar Borrador NDA</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -479,7 +496,8 @@
 
     <script>
         function toggleModal() {
-            document.getElementById('demoModal').classList.toggle('hidden');
+            const modal = document.getElementById('demoModal');
+            modal.classList.toggle('hidden');
             document.body.classList.toggle('overflow-hidden');
         }
 
@@ -507,6 +525,7 @@
             });
         });
 
+        // Este script asegura que todos los botones de acción abran el modal
         document.querySelectorAll('button:not([type="submit"])').forEach(btn => {
             const text = btn.innerText.toLowerCase();
             const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar', 'auditoría', 'solicitar'];
