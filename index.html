@@ -61,17 +61,21 @@
             cursor: pointer;
         }
 
-        .interactive-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
-            filter: brightness(1.1);
+        /* CORRECCIÓN: Animación para TODA la tarjeta */
+        .bento-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            backface-visibility: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+            z-index: 10;
         }
 
         .hero-text {
-            background: linear-gradient(180deg, #1A1C1E 0%, #4F5F79 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #1A1C1E;
         }
 
         @keyframes scroll {
@@ -122,35 +126,25 @@
             cursor: pointer;
             transition: 0.2s;
             border: 3px solid #1A1C1E;
-            box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
         }
 
-        /* EFECTO DE INTERFAZ PROFESIONAL (Sin vídeo roto) */
-        .dashboard-wrapper {
-            position: relative;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-
-        .dashboard-wrapper::after {
-            content: "";
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(52, 211, 153, 0.05), transparent);
-            animation: scan 6s linear infinite;
-        }
-
-        @keyframes scan {
+        /* EFECTO DASHBOARD FLOTANTE */
+        @keyframes float {
             0% {
-                top: -100%;
+                transform: translateY(0px) rotate(2deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(1deg);
             }
 
             100% {
-                top: 100%;
+                transform: translateY(0px) rotate(2deg);
             }
+        }
+
+        .floating-dashboard {
+            animation: float 6s ease-in-out infinite;
         }
 
         .status-dot {
@@ -176,20 +170,25 @@
                 font-size: 3.25rem !important;
                 line-height: 1.1 !important;
             }
+
+            .floating-dashboard {
+                animation: none;
+                transform: none;
+            }
         }
     </style>
 </head>
 
 <body class="bg-background text-primary font-body antialiased">
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-500">
-        <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 py-5 text-primary">
+        <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 py-5">
             <div class="flex items-center gap-2 group cursor-pointer"
                 onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <span
                     class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:rotate-90 duration-500">architecture</span>
-                <span class="text-xl font-extrabold tracking-tighter font-headline">PLANO</span>
+                <span class="text-xl font-extrabold tracking-tighter font-headline text-primary">PLANO</span>
             </div>
-            <nav class="hidden md:flex gap-10 items-center">
+            <nav class="hidden md:flex gap-10 items-center text-primary text-primary">
                 <a class="text-sm font-semibold hover:text-accent transition-colors" href="#dashboard">Plataforma</a>
                 <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
                     href="#precios">Precios</a>
@@ -212,23 +211,17 @@
                     class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-primary rounded-full animate-pulse">OFERTA
                     LANZAMIENTO 2026</span>
                 <h1
-                    class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter hero-text mb-8 leading-none">
+                    class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-primary mb-8 leading-none">
                     Optimiza tu cartera con precisión quirúrgica.</h1>
                 <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Consigue hoy tu
                     <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.</p>
-                <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                    <button onclick="toggleModal()"
-                        class="interactive-btn bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg">Solicitar
-                        Auditoría gratuita</button>
-                </div>
+                <button onclick="toggleModal()"
+                    class="interactive-btn bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg">Solicitar
+                    Auditoría gratuita</button>
             </div>
         </section>
 
         <section class="py-16 border-y border-slate-100 bg-white overflow-hidden relative z-10">
-            <div class="max-w-screen-xl mx-auto px-8 mb-10 text-center text-primary">
-                <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 text-primary">Infraestructura
-                    tecnológica de confianza</p>
-            </div>
             <div class="logo-slider-container">
                 <div class="logo-slider grayscale opacity-40">
                     <div class="logo-item"><img
@@ -260,38 +253,36 @@
         </section>
 
         <section id="dashboard"
-            class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100 relative z-10 text-primary">
-            <div class="max-w-screen-2xl mx-auto px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100 relative z-10">
+            <div class="max-w-screen-2xl mx-auto px-8 text-primary">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div class="animate-on-scroll">
                         <span
-                            class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block italic">Experiencia
+                            class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block italic">Ecosistema
                             PLANO</span>
                         <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Toda tu
                             cartera, bajo un mismo compás.</h2>
-                        <p class="text-xl text-slate-500 mb-10 max-w-lg">Nuestra interfaz centraliza datos complejos en
-                            una visualización intuitiva. No más búsquedas en cientos de archivos.</p>
-                        <ul class="space-y-6">
-                            <li class="flex gap-4 items-start text-primary">
-                                <span class="material-symbols-outlined bg-white p-2 rounded-lg shadow-sm">map</span>
-                                <div>
-                                    <h4 class="font-bold">Geolocalización Inteligente</h4>
-                                    <p class="text-sm text-slate-500">Visualiza el rendimiento de tus activos en tiempo
-                                        real.</p>
-                                </div>
-                            </li>
-                        </ul>
+                        <p class="text-xl text-slate-500 mb-10 max-w-lg leading-relaxed">Nuestra interfaz centraliza
+                            datos complejos en una visualización táctica. No más búsquedas en cientos de archivos; solo
+                            decisiones rentables.</p>
+                        <div
+                            class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 inline-flex">
+                            <span class="material-symbols-outlined text-emerald-500">map</span>
+                            <span class="text-sm font-bold">Monitorización Geográfica Activa</span>
+                        </div>
                     </div>
                     <div class="relative animate-on-scroll">
                         <div
-                            class="absolute top-6 right-6 z-30 flex items-center gap-3 bg-black/90 backdrop-blur px-4 py-2 rounded-full border border-white/10 shadow-2xl">
-                            <span class="w-2 h-2 bg-emerald-500 rounded-full status-dot"></span>
-                            <span class="text-[9px] font-bold text-white tracking-[0.2em] uppercase">Monitorización
-                                Activa</span>
+                            class="absolute -top-4 -right-4 z-30 flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-slate-100 shadow-2xl">
+                            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full status-dot"></span>
+                            <span class="text-[10px] font-bold text-primary tracking-[0.1em] uppercase">Live Engine
+                                2.0</span>
                         </div>
                         <div
-                            class="dashboard-wrapper shadow-[0_50px_100px_rgba(0,0,0,0.15)] transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 bg-white border border-slate-200">
-                            <img src="dashboard.png" alt="PLANO dashboard" class="w-full h-auto">
+                            class="floating-dashboard relative z-10 rounded-[2rem] p-2 bg-slate-200 shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-slate-300">
+                            <div class="rounded-[1.5rem] overflow-hidden bg-white border border-slate-100">
+                                <img src="dashboard.png" alt="PLANO dashboard" class="w-full h-auto">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -300,66 +291,66 @@
 
         <section class="py-24 bg-white border-b border-slate-100 relative z-10 text-primary">
             <div class="max-w-screen-xl mx-auto px-8">
-                <div class="text-center mb-20 animate-on-scroll text-primary">
+                <div class="text-center mb-20 animate-on-scroll">
                     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4">Tu optimización en tres pasos
                     </h2>
-                    <p class="text-slate-500 text-lg">De datos crudos a decisiones estratégicas en menos de 24 horas.
-                    </p>
+                    <p class="text-slate-500 text-lg">De datos crudos a decisiones estratégicas en 24 horas.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-                    <div class="relative z-10 animate-on-scroll">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative text-primary">
+                    <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100">
                         <div
                             class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
                             1</div>
                         <h4 class="text-xl font-bold mb-3">Conexión Segura</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Firma nuestro <strong>NDA digital</strong> y
+                        <p class="text-slate-500 text-sm leading-relaxed">Firma el <strong>NDA digital</strong> y
                             comparte tu cartera (Excel/PDF).</p>
                     </div>
-                    <div class="relative z-10 animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100"
+                        style="transition-delay: 200ms;">
                         <div
                             class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
                             2</div>
                         <h4 class="text-xl font-bold mb-3">Análisis de Precisión</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Nuestro motor detecta fugas de rentabilidad y
-                            oportunidades ocultas.</p>
+                        <p class="text-slate-500 text-sm leading-relaxed">Detectamos fugas de rentabilidad y brechas de
+                            mercado.</p>
                     </div>
-                    <div class="relative z-10 animate-on-scroll" style="transition-delay: 400ms;">
+                    <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100"
+                        style="transition-delay: 400ms;">
                         <div
-                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
+                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white text-white">
                             3</div>
-                        <h4 class="text-xl font-bold mb-3 text-primary">Entrega Estratégica</h4>
+                        <h4 class="text-xl font-bold mb-3">Entrega Estratégica</h4>
                         <p class="text-slate-500 text-sm leading-relaxed">Recibes tu <strong>Dashboard activo</strong> y
-                            un reporte táctico inmediato.</p>
+                            reporte de impacto.</p>
                     </div>
-                    <div class="hidden md:block absolute top-6 left-0 w-full h-[2px] bg-slate-100 -z-0"></div>
                 </div>
             </div>
         </section>
 
-        <section class="py-32 bg-slate-900 text-white overflow-hidden relative z-10 text-primary">
+        <section class="py-32 bg-slate-900 text-white overflow-hidden relative z-10">
             <div class="max-w-screen-xl mx-auto px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div class="text-white">
+                    <div>
                         <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">¿Cuánto
                             dinero estás dejando de percibir?</h2>
                         <div class="space-y-12">
                             <div>
                                 <div class="flex justify-between mb-6"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-slate-500 text-primary">Número
-                                        de Activos</span><span id="units-val" class="text-3xl font-black">50</span>
-                                </div>
+                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Número de
+                                        Activos</span><span id="units-val"
+                                        class="text-3xl font-black text-white">50</span></div>
                                 <input type="range" id="units" min="1" max="200" value="50">
                             </div>
                             <div>
                                 <div class="flex justify-between mb-6"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-slate-500 text-primary">Renta
-                                        Mensual Media (€)</span><span id="rent-val"
-                                        class="text-3xl font-black">1.200€</span></div>
+                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Renta Mensual
+                                        Media (€)</span><span id="rent-val"
+                                        class="text-3xl font-black text-white">1.200€</span></div>
                                 <input type="range" id="rent" min="500" max="5000" step="50" value="1200">
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10 text-center">
+                    <div class="bg-white/5 backdrop-blur-xl rounded-4xl p-12 border border-white/10 text-center">
                         <span class="text-emerald-400 font-bold text-sm uppercase tracking-[0.2em] mb-6 block">Fuga de
                             Rentabilidad Anual Estimada</span>
                         <div id="leak-total"
@@ -378,7 +369,7 @@
                     <div class="w-full lg:w-1/3 animate-on-scroll">
                         <div class="relative">
                             <div
-                                class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white border border-slate-100">
+                                class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white">
                                 <img src="luis.png" alt="Luis Cañadilla Pons"
                                     class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                                     onerror="this.src='https://via.placeholder.com/600x750?text=Luis'">
@@ -389,18 +380,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full lg:w-2/3 animate-on-scroll text-primary" style="transition-delay: 200ms;">
-                        <span
-                            class="text-emerald-500 font-bold text-sm uppercase tracking-widest mb-4 block text-emerald-500">Precisión
+                    <div class="w-full lg:w-2/3 animate-on-scroll" style="transition-delay: 200ms;">
+                        <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block">Precisión
                             que nace de la visión</span>
                         <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Humanizando
                             el dato inmobiliario.</h2>
-                        <div class="space-y-6 text-lg text-slate-500 max-w-2xl text-primary">
+                        <div class="space-y-6 text-lg text-slate-500 max-w-2xl text-primary text-primary">
                             <p>“Fundé <strong>PLANO</strong> tras observar cómo el Asset Management tradicional perdía
                                 millones en ineficiencias invisibles. Mi objetivo es que cada metro cuadrado rinda al
                                 máximo mediante la tecnología.”</p>
                         </div>
-                        <div class="mt-12 text-primary">
+                        <div class="mt-12 text-primary text-primary text-primary">
                             <p class="text-primary font-black text-2xl tracking-tight uppercase">Luis Cañadilla Pons</p>
                             <p class="text-slate-400 text-sm uppercase tracking-widest font-bold">Founder & Head of
                                 Operations</p>
@@ -410,86 +400,73 @@
             </div>
         </section>
 
-        <section class="py-20 bg-slate-50 border-y border-slate-100 relative z-10 text-primary">
-            <div class="max-w-screen-xl mx-auto px-8">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-12 text-primary">
-                    <div class="flex-1 text-primary">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-emerald-500 text-3xl">verified_user</span>
-                            <h3 class="text-2xl font-bold tracking-tight uppercase">Seguridad de Nivel Institucional
-                            </h3>
-                        </div>
-                        <p class="text-slate-500 max-w-2xl">Cumplimiento estricto con la normativa RGPD europea y
-                            encriptación AES-256.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Garantía de
-                            Privacidad</p>
-                        <h4 class="font-bold mb-2 italic">"Firmamos un NDA antes de tu Auditoría"</h4>
-                        <p class="text-sm text-slate-500">Protegemos tu información mediante Acuerdos de
-                            Confidencialidad.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="precios" class="animate-on-scroll section-padding py-32 bg-white relative z-10 text-primary">
-            <div class="max-w-screen-2xl mx-auto text-center mb-20 text-primary">
+        <section id="precios" class="animate-on-scroll section-padding py-32 bg-slate-50 relative z-10 text-primary">
+            <div class="max-w-screen-2xl mx-auto text-center mb-20 text-primary text-primary">
                 <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6">Inversión en
                     Eficiencia</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
-                    <div
-                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary">
+
+                    <div onclick="toggleModal()"
+                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-primary">
-                                Starter Lite</h4>
-                            <div class="text-4xl font-black mb-6">149€ <span class="text-lg font-normal">/mes</span>
-                            </div>
-                            <ul class="text-sm text-slate-500 space-y-3 mb-10">
-                                <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-primary text-xs">check</span> Hasta 10
-                                    activos</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-primary text-xs">check</span> Auditoría
-                                    mensual</li>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Starter Lite
+                            </h4>
+                            <div class="text-5xl font-black mb-8 text-primary">149€ <span
+                                    class="text-lg font-normal text-slate-400">/mes</span></div>
+                            <ul class="text-sm text-slate-500 space-y-4">
+                                <li class="flex items-center gap-2 text-primary"><span
+                                        class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                    Hasta 10 activos</li>
+                                <li class="flex items-center gap-2 text-primary"><span
+                                        class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                    Auditoría mensual</li>
+                                <li class="flex items-center gap-2 text-primary"><span
+                                        class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                    Dashboard 24/7</li>
                             </ul>
                         </div>
-                        <button onclick="toggleModal()"
-                            class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Empezar
+                        <button
+                            class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">Empezar
                             ahora</button>
                     </div>
-                    <div
-                        class="p-10 rounded-3xl bg-primary text-white shadow-2xl bento-card flex flex-col justify-between relative text-white">
-                        <div class="absolute top-5 right-5 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold">
+
+                    <div onclick="toggleModal()"
+                        class="bento-card p-10 rounded-4xl bg-primary text-white flex flex-col justify-between h-[500px] relative shadow-2xl">
+                        <div class="absolute top-5 right-5 bg-emerald-500 px-3 py-1 rounded-full text-[10px] font-bold">
                             POPULAR</div>
                         <div>
-                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest">Real Estate Pro
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Real Estate Pro
                             </h4>
-                            <div class="text-4xl font-black mb-6">490€ <span
-                                    class="text-lg font-normal text-white/60">/mes</span></div>
-                            <ul class="text-sm text-white/70 space-y-3 mb-10 text-white">
+                            <div class="text-5xl font-black mb-8 text-white">490€ <span
+                                    class="text-lg font-normal text-slate-500">/mes</span></div>
+                            <ul class="text-sm text-slate-300 space-y-4">
                                 <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-white text-xs">check</span> Activos
-                                    ilimitados</li>
+                                        class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+                                    Activos ilimitados</li>
                                 <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-white text-xs">check</span> Análisis de
-                                    OPEX Avanzado</li>
+                                        class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+                                    Análisis de OPEX Avanzado</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+                                    Soporte Prioritario</li>
                             </ul>
                         </div>
-                        <button onclick="toggleModal()"
-                            class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
+                        <button class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
                             Pro</button>
                     </div>
-                    <div
-                        class="p-10 rounded-3xl border border-slate-100 bento-card flex flex-col justify-between bg-white shadow-sm text-primary">
+
+                    <div onclick="toggleModal()"
+                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-primary">
-                                Global</h4>
-                            <div class="text-4xl font-black mb-6">Custom</div>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Global</h4>
+                            <div class="text-5xl font-black mb-8 text-primary">Custom</div>
+                            <p class="text-sm text-slate-500 leading-relaxed">Para carteras institucionales y grandes
+                                tenedores que requieren integraciones a medida.</p>
                         </div>
-                        <button onclick="toggleModal()"
-                            class="interactive-btn w-full py-4 rounded-xl border border-primary font-bold">Contactar</button>
+                        <button
+                            class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">Contactar</button>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -498,32 +475,31 @@
     <footer class="bg-white py-24 border-t border-slate-100 relative z-10 text-primary">
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-primary">
-                <div class="col-span-1 text-primary">
+                <div class="col-span-1">
                     <div class="flex items-center gap-2 mb-6"><span
-                            class="material-symbols-outlined text-primary text-2xl">architecture</span><span
+                            class="material-symbols-outlined text-primary text-2xl text-primary">architecture</span><span
                             class="text-xl font-bold tracking-tighter">PLANO</span></div>
                     <p class="text-slate-400 text-sm leading-relaxed">Precisión quirúrgica en Real Estate. Built with AI
                         for Asset Managers.</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary text-primary">Producto</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Producto</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><a href="#dashboard" class="hover:text-primary transition-colors">Plataforma</a></li>
                         <li><a href="#precios" class="hover:text-primary transition-colors">Precios</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary text-primary">Empresa</h5>
-                    <ul class="text-sm text-slate-500 space-y-4 text-primary">
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Empresa</h5>
+                    <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
                                 onclick="showInfo('Sobre PLANO', 'PLANO es una plataforma PropTech en fase de lanzamiento 2026.')"
-                                class="hover:text-primary transition-colors text-left text-primary text-primary">Sobre
-                                PLANO</button></li>
+                                class="hover:text-primary transition-colors text-left">Sobre PLANO</button></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Legal</h5>
-                    <ul class="text-sm text-slate-500 space-y-4">
+                    <ul class="text-sm text-slate-500 space-y-4 text-primary">
                         <li><button
                                 onclick="showInfo('Privacidad', 'Tus datos están protegidos bajo encriptación AES-256.')"
                                 class="hover:text-primary transition-colors text-left text-primary">Privacidad
@@ -548,8 +524,8 @@
         <div class="relative bg-white w-full max-w-lg rounded-3xl p-10 shadow-2xl">
             <button onclick="toggleModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary"><span
                     class="material-symbols-outlined">close</span></button>
-            <div class="mb-8 text-primary">
-                <h3 class="text-3xl font-extrabold tracking-tighter mb-2">Solicita tu Auditoría</h3>
+            <div class="mb-8">
+                <h3 class="text-3xl font-extrabold tracking-tighter mb-2 text-primary">Solicita tu Auditoría</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">Recibe tu reporte táctico y acceso al Dashboard
                     activo.</p>
             </div>
@@ -565,8 +541,9 @@
                     class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg">Enviar y
                     recibir NDA</button>
             </form>
-            <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary text-primary">
-                <span class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
+            <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary">
+                <span
+                    class="material-symbols-outlined text-6xl text-emerald-500 mb-4 text-primary text-primary">check_circle</span>
                 <h3 class="text-2xl font-bold mb-2">Solicitud Recibida</h3>
                 <p class="text-slate-500">Te hemos enviado el NDA firmado para comenzar.</p>
             </div>
@@ -575,7 +552,8 @@
 
     <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
         <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
-        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary text-primary">
+        <div
+            class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary text-primary text-primary">
             <h4 id="infoTitle" class="text-xl font-bold mb-4"></h4>
             <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
             <button onclick="closeInfo()"
