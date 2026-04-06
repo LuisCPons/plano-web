@@ -389,33 +389,57 @@
         </section>
     </main>
 
-    <footer class="bg-white py-20 border-t border-slate-100">
+    <footer class="bg-white py-24 border-t border-slate-100">
         <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
-                <div>
-                    <span class="text-2xl font-bold tracking-tighter">PLANO</span>
-                    <p class="text-slate-400 text-sm mt-4 max-w-xs">El sistema operativo para carteras inmobiliarias de
-                        alto rendimiento.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-primary text-2xl">architecture</span>
+                        <span class="text-xl font-bold tracking-tighter">PLANO</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Precisión quirúrgica en la gestión de carteras inmobiliarias. Built for B2B Real Estate
+                        Managers.
+                    </p>
                 </div>
-                <div class="grid grid-cols-2 gap-20">
-                    <div>
-                        <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Producto</h5>
-                        <ul class="text-sm text-slate-500 space-y-4">
-                            <li><a href="#" class="hover:text-primary transition-colors">Plataforma</a></li>
-                            <li><a href="#precios" class="hover:text-primary transition-colors">Precios</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Legal</h5>
-                        <ul class="text-sm text-slate-500 space-y-4">
-                            <li><a href="#" class="hover:text-primary transition-colors">Privacidad</a></li>
-                            <li><a href="#" class="hover:text-primary transition-colors">Términos</a></li>
-                        </ul>
-                    </div>
+
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Producto</h5>
+                    <ul class="text-sm text-slate-500 space-y-4">
+                        <li><a href="#" class="hover:text-primary transition-colors">Plataforma Dashboard</a></li>
+                        <li><a href="#precios" class="hover:text-primary transition-colors">Precios y Planes</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Solicitar Auditoría</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Empresa</h5>
+                    <ul class="text-sm text-slate-500 space-y-4">
+                        <li><a href="#" class="hover:text-primary transition-colors">Sobre PLANO</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contacto Soporte</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Partner Program</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest text-primary mb-8">Legal</h5>
+                    <ul class="text-sm text-slate-500 space-y-4">
+                        <li><a href="#" class="hover:text-primary transition-colors">Privacidad RGPD</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Términos de Servicio</a></li>
+                        <li><a href="#" class="hover:text-primary font-bold transition-colors">Descargar Borrador
+                                NDA</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-50 flex justify-between items-center">
-                <p class="text-slate-400 text-xs">© 2026 PLANO. Todos los derechos reservados.</p>
+
+            <div class="pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-400 text-xs">© 2026 PLANO Asset Management Technologies. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <span
+                        class="text-[10px] font-bold text-slate-300 uppercase tracking-widest flex items-center gap-2">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full"></span> System Status: Online
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
@@ -434,7 +458,7 @@
                     placeholder="Nombre completo">
                 <input type="text" name="company" required class="w-full bg-slate-50 border-none rounded-xl p-4"
                     placeholder="Empresa / Asset Manager">
-                <select name="plan_interes" class="w-full bg-slate-50 border-none rounded-xl p-4">
+                <select name="plan_interes" class="w-full bg-slate-50 border-none rounded-xl p-4 text-slate-600">
                     <option value="audit_only">Solo Auditoría Gratis</option>
                     <option value="starter_lite">Plan Starter (149€)</option>
                     <option value="pro_scale">Plan Pro (490€)</option>
@@ -485,7 +509,7 @@
 
         document.querySelectorAll('button:not([type="submit"])').forEach(btn => {
             const text = btn.innerText.toLowerCase();
-            const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar', 'auditoría'];
+            const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar', 'auditoría', 'solicitar'];
             if (actionWords.some(word => text.includes(word))) {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
