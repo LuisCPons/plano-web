@@ -204,6 +204,7 @@
                 <a class="text-sm font-semibold hover:text-accent transition-colors" href="#dashboard">Plataforma</a>
                 <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
                     href="#precios">Precios</a>
+                <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#faq">FAQ</a>
                 <button onclick="toggleModal()"
                     class="interactive-btn bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/10">Auditoría
                     Gratis</button>
@@ -226,8 +227,7 @@
                     class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-primary mb-8 leading-none">
                     Optimiza tu cartera con precisión quirúrgica.</h1>
                 <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Consigue hoy tu
-                    <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.
-                </p>
+                    <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.</p>
                 <button onclick="toggleModal()"
                     class="interactive-btn bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg">Solicitar
                     Auditoría gratuita</button>
@@ -478,6 +478,7 @@
             <div class="max-w-4xl mx-auto px-8">
                 <div class="text-center mb-20 animate-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6">Preguntas Frecuentes</h2>
+                    <p class="text-slate-500">Todo lo que necesitas saber para empezar a optimizar tu patrimonio.</p>
                 </div>
                 <div class="space-y-4">
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
@@ -488,7 +489,7 @@
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
                             <p>Menos de 5 minutos. Solo necesitamos tu exportación actual a Excel o PDF. Nosotros nos
-                                encargamos del mapeo.</p>
+                                encargamos de limpiar el dato y mapearlo en PLANO.</p>
                         </div>
                     </div>
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
@@ -498,8 +499,32 @@
                                 class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
-                            <p>Absolutamente. Firmamos un NDA digital antes de procesar nada. Tus datos están bajo
-                                encriptación bancaria AES-256.</p>
+                            <p>Absolutamente. Antes de cualquier intercambio, firmamos un NDA digital con validez legal.
+                                Además, tus datos se encriptan bajo el estándar AES-256 de nivel bancario.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
+                        onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold text-lg">¿Tengo que cambiar mi software de gestión actual?</h4><span
+                                class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+                        </div>
+                        <div class="faq-answer mt-4 text-slate-500">
+                            <p>No. PLANO no sustituye a tu ERP o software de gestión, lo potencia. Somos una capa de
+                                inteligencia y visualización que extrae valor de donde otros solo ven listas de datos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
+                        onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold text-lg">¿Qué incluye exactamente la Auditoría gratuita?</h4><span
+                                class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+                        </div>
+                        <div class="faq-answer mt-4 text-slate-500">
+                            <p>Analizamos hasta 3 activos de tu cartera sin coste. Detectamos el "Yield Gap", revisamos
+                                la actualización de IPCs y generamos una hoja de ruta con 3 acciones inmediatas para
+                                mejorar tu margen.</p>
                         </div>
                     </div>
                 </div>
@@ -522,6 +547,7 @@
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><a href="#dashboard" class="hover:text-primary transition-colors">Plataforma</a></li>
                         <li><a href="#precios" class="hover:text-primary transition-colors">Precios</a></li>
+                        <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
@@ -602,7 +628,7 @@
                         class="w-full bg-slate-50 border-none rounded-2xl p-5 text-primary text-center"
                         placeholder="Tu email corporativo">
                     <button type="submit"
-                        class="interactive-btn w-full bg-primary text-white py-5 rounded-2xl font-bold text-lg shadow-xl">Enviar
+                        class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl">Enviar
                         guía a mi inbox</button>
                 </form>
                 <p class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">Enviamos valor, cero spam.
@@ -622,7 +648,6 @@
     </div>
 
     <script>
-        // Calculadora
         const unitsInput = document.getElementById('units');
         const rentInput = document.getElementById('rent');
         const leakDisplay = document.getElementById('leak-total');
@@ -641,7 +666,6 @@
         unitsInput.addEventListener('input', updateCalculator);
         rentInput.addEventListener('input', updateCalculator);
 
-        // Modales
         function toggleModal() {
             const modal = document.getElementById('demoModal');
             modal.classList.toggle('hidden');
@@ -660,7 +684,6 @@
             if (document.getElementById('demoModal').classList.contains('hidden')) document.body.style.overflow = 'auto';
         }
 
-        // EXIT INTENT LOGIC
         let exitShown = false;
         function closeExitModal() {
             document.getElementById('exitModal').classList.add('hidden');
@@ -679,9 +702,7 @@
             updateCalculator();
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
                 });
             }, { threshold: 0.1 });
 
