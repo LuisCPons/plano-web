@@ -2,15 +2,23 @@
 <html class="light" lang="es">
 
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTRM1W9CG3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DTRM1W9CG3');
+    </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>PLANO | PropTech B2B de Alto Rendimiento</title>
+    <title>PLANO | Auditoría y Gestión PropTech B2B de Alto Rendimiento</title>
     <meta name="description"
-        content="Plano: La herramienta profesional para visualizar activos y agendar tu demo interactiva en segundos. Precisión para tu negocio.">
+        content="Consigue tu Auditoría de Eficiencia gratuita. Plano: La herramienta profesional para visualizar activos y optimizar tu cartera inmobiliaria en segundos.">
     <meta property="og:title" content="PLANO - Sistema Operativo PropTech">
     <meta property="og:description"
-        content="Visualiza, conecta y agenda tu Demo. La precisión de un compás aplicada al Real Estate.">
+        content="Visualiza, conecta y solicita tu Auditoría. La precisión de un compás aplicada al Real Estate.">
     <meta property="og:image" content="https://plano-web.vercel.app/favicon.png">
     <meta property="og:url" content="https://plano-web.vercel.app/">
     <meta name="twitter:card" content="summary_large_image">
@@ -49,7 +57,6 @@
         p {
             line-height: 1.75 !important;
             color: #475569;
-            /* Slate-600 para un tono más suave y pro */
         }
 
         /* Efecto Glassmorphism en Nav */
@@ -120,10 +127,11 @@
             </div>
             <nav class="hidden md:flex gap-10 items-center">
                 <a class="text-sm font-semibold hover:text-accent transition-colors" href="#">Plataforma</a>
-                <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">Análisis</a>
+                <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+                    href="#precios">Precios</a>
                 <button
-                    class="interactive-btn bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/10">Agendar
-                    Demo</button>
+                    class="interactive-btn bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/10">Auditoría
+                    Gratis</button>
             </nav>
         </div>
     </header>
@@ -138,17 +146,31 @@
             </div>
             <div class="relative z-10 max-w-5xl text-center px-6">
                 <span
-                    class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-primary rounded-full animate-pulse">SISTEMA
-                    OPERATIVO PROPTECH</span>
+                    class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-primary rounded-full animate-pulse">OFERTA
+                    LANZAMIENTO 2026</span>
                 <h1
                     class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-none hero-text mb-8">
-                    Plano: Visualiza, conecta y agenda tu Demo.</h1>
-                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Con Plano, agendar una
-                    demo interactiva es cuestión de segundos. La precisión de un compás aplicada a tu negocio.</p>
+                    Optimiza tu Cartera con Precisión Quirúrgica.</h1>
+                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Consigue hoy tu
+                    <strong>Auditoría de Eficiencia Gratuita</strong> y descubre dónde estás perdiendo rentabilidad en
+                    tus activos inmobiliarios.</p>
                 <div class="flex flex-col sm:flex-row gap-5 justify-center">
                     <button
                         class="interactive-btn bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg">Solicitar
-                        Acceso Directo</button>
+                        Auditoría Gratuita</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 border-y border-slate-100 bg-white/50">
+            <div class="max-w-screen-xl mx-auto px-8">
+                <p class="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 mb-8">
+                    Infraestructura Tecnológica de Confianza</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-50">
+                    <span class="font-bold text-xl tracking-tighter">VERCEL</span>
+                    <span class="font-bold text-xl tracking-tighter">GITHUB</span>
+                    <span class="font-bold text-xl tracking-tighter">GOOGLE CLOUD</span>
+                    <span class="font-bold text-xl tracking-tighter">TAILWIND</span>
                 </div>
             </div>
         </section>
@@ -172,7 +194,7 @@
             </div>
         </section>
 
-        <section class="animate-on-scroll section-padding py-32 bg-white">
+        <section id="precios" class="animate-on-scroll section-padding py-32 bg-white">
             <div class="max-w-screen-2xl mx-auto">
                 <div class="text-center mb-20">
                     <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6 text-primary">
@@ -184,17 +206,19 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="p-10 rounded-3xl border border-slate-100 flex flex-col justify-between bento-card">
                         <div>
-                            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">Portfolio
-                                Starter</h4>
-                            <div class="text-4xl font-headline font-black mb-6">990€ <span
+                            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">Starter Lite
+                            </h4>
+                            <div class="text-4xl font-headline font-black mb-6">149€ <span
                                     class="text-lg font-medium text-slate-400">/mes</span></div>
+                            <p class="text-sm mb-8 text-slate-500 italic">Ideal para gestores que buscan resultados
+                                inmediatos.</p>
                             <ul class="space-y-4 mb-10">
                                 <li class="flex items-center gap-3 text-sm text-slate-600"><span
                                         class="material-symbols-outlined text-primary text-sm">check_circle</span> Hasta
-                                    10 activos</li>
+                                    3 activos</li>
                                 <li class="flex items-center gap-3 text-sm text-slate-600"><span
                                         class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                    Dashboard básico</li>
+                                    Dashboard de métricas básico</li>
                                 <li class="flex items-center gap-3 text-sm text-slate-600"><span
                                         class="material-symbols-outlined text-primary text-sm">check_circle</span>
                                     Reportes mensuales</li>
@@ -213,7 +237,7 @@
                         <div>
                             <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white/50 mb-4">Real Estate Pro
                             </h4>
-                            <div class="text-4xl font-headline font-black mb-6">2.490€ <span
+                            <div class="text-4xl font-headline font-black mb-6">490€ <span
                                     class="text-lg font-medium text-white/40">/mes</span></div>
                             <ul class="space-y-4 mb-10">
                                 <li class="flex items-center gap-3 text-sm text-white/80"><span
@@ -272,9 +296,9 @@
                 <span class="material-symbols-outlined">close</span>
             </button>
             <div class="mb-8">
-                <h3 class="text-3xl font-headline font-extrabold tracking-tighter mb-2">Solicitar Acceso Directo</h3>
-                <p class="text-slate-500 font-medium">Nuestro equipo te contactará para una consultoría estratégica de
-                    15 min.</p>
+                <h3 class="text-3xl font-headline font-extrabold tracking-tighter mb-2">Reserva tu Auditoría Gratis</h3>
+                <p class="text-slate-500 font-medium">Analizaremos tu cartera de activos y te enviaremos un reporte de
+                    optimización estratégica en 24 horas.</p>
             </div>
             <form id="leadForm" class="space-y-4" action="https://formspree.io/f/xkopkzla" method="POST">
                 <div>
@@ -294,13 +318,12 @@
                     </div>
                     <div>
                         <label
-                            class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-1">Volumen
-                            Activos</label>
-                        <select name="volume"
+                            class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-1">Interés</label>
+                        <select name="plan_interes"
                             class="w-full bg-slate-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all">
-                            <option value="1-50m">1-50m€</option>
-                            <option value="50-200m">50m€ - 200m€</option>
-                            <option value="200m+">+200m€</option>
+                            <option value="audit_only">Solo Auditoría Gratis</option>
+                            <option value="starter_lite">Plan Starter (149€)</option>
+                            <option value="pro_scale">Plan Pro (490€)</option>
                         </select>
                     </div>
                 </div>
@@ -316,7 +339,7 @@
                 </div>
                 <button type="submit"
                     class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl shadow-black/10">
-                    Confirmar Solicitud
+                    Confirmar mi Auditoría
                 </button>
             </form>
 
@@ -325,7 +348,7 @@
                 <span class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
                 <h3 class="text-2xl font-headline font-extrabold text-primary mb-2">Solicitud Recibida</h3>
                 <p class="text-slate-500 font-medium">Gracias por tu interés en PLANO. Un especialista se pondrá en
-                    contacto contigo en las próximas 24 horas.</p>
+                    contacto contigo con tu reporte en las próximas 24 horas.</p>
             </div>
         </div>
     </div>
@@ -371,7 +394,7 @@
         // Apertura de modal para todos los botones de acción
         document.querySelectorAll('button:not([type="submit"])').forEach(btn => {
             const text = btn.innerText.toLowerCase();
-            const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar'];
+            const actionWords = ['demo', 'acceso', 'ahora', 'ventas', 'empezar', 'auditoría'];
             if (actionWords.some(word => text.includes(word))) {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
