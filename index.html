@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PLANO | PropTech B2B de Alto Rendimiento</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A1C1E",
+                        "accent": "#4F5F79",
+                        "background": "#F8FAFB",
+                        "surface": "#FFFFFF"
+                    },
+                    animation: { 'glow': 'glow 3s infinite' },
+                    keyframes: {
+                        glow: { '0%, 100%': { opacity: 1 }, '50%': { opacity: 0.6 } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav { background: rgba(248, 250, 251, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .bento-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .bento-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
+        .hero-text { background: linear-gradient(180deg, #1A1C1E 0%, #4F5F79 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-background text-primary font-body antialiased">
+    <header class="glass-nav fixed top-0 w-full z-50">
+        <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 py-5">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <span class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:rotate-90 duration-500">architecture</span>
+                <span class="text-xl font-extrabold tracking-tighter font-headline">PLANO</span>
+            </div>
+            <nav class="hidden md:flex gap-10 items-center">
+                <a class="text-sm font-semibold hover:text-accent transition-colors" href="#">Plataforma</a>
+                <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">Análisis</a>
+                <button class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-black transition-all shadow-lg shadow-black/10 active:scale-95">Agendar Demo</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Edificio PLANO" class="w-full h-full object-cover scale-105" src="Gemini_Generated_Image_gvdbc2gvdbc2gvdb.png"/>
+                <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
+            </div>
+            <div class="relative z-10 max-w-5xl text-center px-6">
+                <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-primary rounded-full animate-pulse">SISTEMA OPERATIVO PROPTECH</span>
+                <h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-none hero-text mb-8">La base de tus activos inmobiliarios.</h1>
+                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Infraestructura digital para la gestión de carteras B2B de alto rendimiento.</p>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                    <button class="bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">Solicitar Acceso Directo</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-8 max-w-screen-2xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="md:col-span-8 bento-card bg-slate-900 text-white rounded-3xl p-12 relative overflow-hidden group">
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-white text-4xl mb-8">query_stats</span>
+                        <h3 class="text-4xl font-headline font-bold mb-4">Gestión de Activos 360°</h3>
+                        <p class="text-slate-400 text-lg">Visualización en tiempo real de métricas de ocupación y rentabilidad.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-4 bento-card bg-white border border-slate-100 rounded-3xl p-12">
+                    <span class="material-symbols-outlined text-accent text-4xl mb-6">verified_user</span>
+                    <h3 class="text-2xl font-headline font-bold mb-4">Transparencia B2B</h3>
+                    <p class="text-slate-500">Reportes auditables con un solo clic para stakeholders.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-8 bg-white">
+            <div class="max-w-screen-2xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6 text-primary">Inversión en Eficiencia</h2>
+                    <p class="text-slate-500 text-xl max-w-2xl mx-auto">Planes diseñados para escalar con su cartera de activos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-10 rounded-3xl border border-slate-100 flex flex-col justify-between bento-card">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">Portfolio Starter</h4>
+                            <div class="text-4xl font-headline font-black mb-6">990€ <span class="text-lg font-medium text-slate-400">/mes</span></div>
+                            <ul class="space-y-4 mb-10">
+                                <li class="flex items-center gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Hasta 10 activos</li>
+                                <li class="flex items-center gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Dashboard básico</li>
+                                <li class="flex items-center gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Reportes mensuales</li>
+                            </ul>
+                        </div>
+                        <button class="w-full py-4 rounded-xl border border-primary font-bold text-sm hover:bg-primary hover:text-white transition-all">Empezar ahora</button>
+                    </div>
+
+                    <div class="p-10 rounded-3xl bg-primary text-white flex flex-col justify-between shadow-2xl relative overflow-hidden bento-card">
+                        <div class="absolute top-5 right-5 px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold tracking-widest uppercase">Más Popular</div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white/50 mb-4">Real Estate Pro</h4>
+                            <div class="text-4xl font-headline font-black mb-6">2.490€ <span class="text-lg font-medium text-white/40">/mes</span></div>
+                            <ul class="space-y-4 mb-10">
+                                <li class="flex items-center gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-white text-sm">check_circle</span> Activos ilimitados</li>
+                                <li class="flex items-center gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-white text-sm">check_circle</span> Análisis Predictivo IA</li>
+                                <li class="flex items-center gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-white text-sm">check_circle</span> API Access completo</li>
+                            </ul>
+                        </div>
+                        <button class="w-full py-4 rounded-xl bg-white text-primary font-bold text-sm hover:bg-slate-100 transition-all shadow-xl">Solicitar Acceso Pro</button>
+                    </div>
+
+                    <div class="p-10 rounded-3xl border border-slate-100 flex flex-col justify-between bento-card">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">Global Institutional</h4>
+                            <div class="text-4xl font-headline font-black mb-6">Custom</div>
+                            <ul class="space-y-4 mb-10">
+                                <li class="flex items-center gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Soporte 24/7 dedicado</li>
+                                <li class="flex items-center gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Despliegue On-Premise</li>
+                                <li class="flex items-center gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Consultoría estratégica</li>
+                            </ul>
+                        </div>
+                        <button class="w-full py-4 rounded-xl border border-primary font-bold text-sm hover:bg-primary hover:text-white transition-all">Contactar Ventas</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white py-20 border-t border-slate-100">
+        <div class="max-w-screen-2xl mx-auto px-8 flex justify-between items-center">
+            <span class="text-lg font-bold tracking-tighter">PLANO</span>
+            <p class="text-slate-400 text-sm">Minimalismo. Precisión. PropTech.</p>
+        </div>
+    </footer>
+
+    <div id="demoModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" onclick="toggleModal()"></div>
+        <div class="relative bg-white w-full max-w-lg rounded-3xl p-10 shadow-2xl overflow-hidden bento-card">
+            <button onclick="toggleModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="mb-8">
+                <h3 class="text-3xl font-headline font-extrabold tracking-tighter mb-2">Solicitar Acceso Directo</h3>
+                <p class="text-slate-500 font-medium">Nuestro equipo te contactará para una consultoría estratégica de 15 min.</p>
+            </div>
+            <form id="leadForm" class="space-y-4">
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-1">Nombre Completo</label>
+                    <input type="text" required class="w-full bg-slate-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="Ej. Alex Foster">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-1">Empresa</label>
+                        <input type="text" required class="w-full bg-slate-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="Real Estate Co.">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-1">Volumen Activos</label>
+                        <select class="w-full bg-slate-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all">
+                            <option>1-50m€</option>
+                            <option>50m€ - 200m€</option>
+                            <option>+200m€</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 ml-1">Email Corporativo</label>
+                    <input type="email" required class="w-full bg-slate-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="alex@empresa.com">
+                </div>
+                <button type="submit" class="w-full bg-primary text-white py-5 rounded-xl font-bold text-lg hover:bg-black transition-all shadow-xl shadow-black/10">
+                    Confirmar Solicitud
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('demoModal');
+            modal.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        // Vincular todos los botones de Demo/Acceso/Empezar
+        document.querySelectorAll('button').forEach(btn => {
+            const text = btn.innerText.toLowerCase();
+            if(text.includes('demo') || text.includes('acceso') || text.includes('ahora') || text.includes('ventas')) {
+                btn.onclick = toggleModal;
+            }
+        });
+
+        // Simulación de envío
+        document.getElementById('leadForm').onsubmit = (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerText = "Enviando...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('¡Recibido! Nos vemos pronto en el futuro de PLANO.');
+                toggleModal();
+                btn.innerText = "Confirmar Solicitud";
+                btn.disabled = false;
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
