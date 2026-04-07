@@ -12,7 +12,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>PLANO | Auditoría y gestión PropTech B2B de alto rendimiento</title>
+    <title>PLANO | Auditoría y gestión PropTech B2B</title>
     <meta name="description"
         content="Consigue tu Auditoría de Eficiencia gratuita. Plano: La herramienta profesional para visualizar activos y optimizar tu cartera inmobiliaria en segundos.">
 
@@ -79,6 +79,7 @@
             line-height: 1.1;
         }
 
+        /* CARRUSEL INFINITO RESTAURADO */
         @keyframes scroll {
             0% {
                 transform: translateX(0);
@@ -89,10 +90,24 @@
             }
         }
 
+        .logo-slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
         .logo-slider {
             display: flex;
             width: calc(250px * 16);
             animation: scroll 30s linear infinite;
+        }
+
+        .logo-item {
+            width: 250px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         input[type=range] {
@@ -217,7 +232,8 @@
     </header>
 
     <main>
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-32 md:pb-40">
+        <section
+            class="relative h-[85vh] md:h-[90vh] flex flex-col justify-center items-center overflow-hidden pt-20 pb-16">
             <div class="absolute inset-0 z-0">
                 <img alt="Edificio PLANO" class="w-full h-full object-cover scale-105"
                     src="Gemini_Generated_Image_gvdbc2gvdbc2gvdb.png" />
@@ -229,10 +245,10 @@
                     LANZAMIENTO 2026</span>
                 <h1 class="responsive-h1 font-headline font-extrabold tracking-tighter text-primary mb-8">Optimiza tu
                     cartera con precisión quirúrgica.</h1>
-                <p class="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Consigue hoy tu
+                <p class="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto mb-10 font-medium">Consigue hoy tu
                     <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.</p>
                 <button onclick="toggleModal()"
-                    class="interactive-btn w-full sm:w-auto bg-primary text-white px-10 py-6 rounded-2xl font-bold text-xl shadow-[0_20px_50px_rgba(26,28,30,0.3)] hover:bg-slate-800 transition-all">Solicitar
+                    class="interactive-btn w-full sm:w-auto bg-primary text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-[0_20px_50px_rgba(26,28,30,0.3)] hover:bg-slate-800 transition-all">Solicitar
                     Auditoría gratuita</button>
             </div>
         </section>
@@ -271,15 +287,15 @@
         <section id="dashboard"
             class="py-20 md:py-32 bg-slate-50 overflow-hidden border-b border-slate-100 relative z-10">
             <div class="max-w-screen-2xl mx-auto px-6 md:px-8 text-primary">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
                     <div class="animate-on-scroll">
                         <span
                             class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block italic">Ecosistema
                             PLANO</span>
-                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Toda tu
+                        <h2 class="text-3xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Toda tu
                             cartera, bajo un mismo compás.</h2>
-                        <p class="text-xl text-slate-500 mb-10 max-w-lg leading-relaxed">Nuestra interfaz centraliza
-                            datos complejos en una visualización táctica. No más búsquedas en cientos de archivos.</p>
+                        <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-lg">Nuestra interfaz centraliza datos
+                            complejos en una visualización táctica. No más búsquedas en cientos de archivos.</p>
                         <div
                             class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 inline-flex">
                             <span class="material-symbols-outlined text-emerald-500">map</span>
@@ -332,7 +348,7 @@
                     <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100"
                         style="transition-delay: 400ms;">
                         <div
-                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
+                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
                             3</div>
                         <h4 class="text-xl font-bold mb-3">Entrega Estratégica</h4>
                         <p class="text-slate-500 text-sm leading-relaxed">Recibes tu <strong>Dashboard activo</strong> y
@@ -381,10 +397,10 @@
         <section class="py-20 md:py-32 bg-white relative z-10 text-primary">
             <div class="max-w-screen-xl mx-auto px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
-                    <div class="w-full lg:w-1/3 animate-on-scroll">
+                    <div class="w-full lg:w-1/3 animate-on-scroll flex justify-center">
                         <div class="relative">
                             <div
-                                class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white">
+                                class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white w-full max-w-[350px]">
                                 <img src="luis.png" alt="Luis Cañadilla Pons"
                                     class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                                     onerror="this.src='https://via.placeholder.com/600x750?text=Luis'">
@@ -402,10 +418,9 @@
                             Estratégica</span>
                         <h2 class="text-3xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Humanizando
                             el dato inmobiliario.</h2>
-                        <p class="text-lg text-slate-500 max-w-2xl mb-12 leading-relaxed">“Fundé <strong>PLANO</strong>
-                            tras observar cómo el Asset Management tradicional perdía millones en ineficiencias
-                            invisibles. Mi objetivo es que cada metro cuadrado rinda al máximo mediante la tecnología.”
-                        </p>
+                        <p class="text-lg text-slate-500 max-w-2xl mb-12">“Fundé <strong>PLANO</strong> tras observar
+                            cómo el Asset Management tradicional perdía millones en ineficiencias invisibles. Mi
+                            objetivo es que cada metro cuadrado rinda al máximo mediante la tecnología.”</p>
                         <div>
                             <p class="text-primary font-black text-xl md:text-2xl tracking-tight uppercase">Luis
                                 Cañadilla Pons</p>
@@ -424,7 +439,7 @@
                     Eficiencia</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 text-left">
                     <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
+                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between min-h-[450px] md:h-[500px]">
                         <div>
                             <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Starter Lite
                             </h4>
@@ -443,16 +458,15 @@
                             class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">Empezar
                             ahora</button>
                     </div>
-
                     <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl bg-primary text-white flex flex-col justify-between h-[500px] relative shadow-2xl">
+                        class="bento-card p-10 rounded-4xl bg-primary text-white flex flex-col justify-between min-h-[450px] md:h-[500px] relative shadow-2xl">
                         <div class="absolute top-5 right-5 bg-emerald-500 px-3 py-1 rounded-full text-[10px] font-bold">
                             POPULAR</div>
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Real Estate Pro
-                            </h4>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-white/50">
+                                Real Estate Pro</h4>
                             <div class="text-5xl font-black mb-8">490€ <span
-                                    class="text-lg font-normal text-slate-500 text-white/50">/mes</span></div>
+                                    class="text-lg font-normal text-slate-500">/mes</span></div>
                             <ul class="text-sm text-white/70 space-y-4">
                                 <li class="flex items-center gap-2"><span
                                         class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
@@ -465,18 +479,17 @@
                         <button class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
                             Pro</button>
                     </div>
-
                     <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
+                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between min-h-[450px] md:h-[500px]">
                         <div>
                             <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-primary">
                                 Global</h4>
-                            <div class="text-5xl font-black mb-8 text-primary">Custom</div>
+                            <div class="text-5xl font-black mb-8">Custom</div>
                             <p class="text-sm text-slate-500 leading-relaxed">Para carteras institucionales que
                                 requieren integración a medida.</p>
                         </div>
                         <button
-                            class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary text-center">Contactar</button>
+                            class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">Contactar</button>
                     </div>
                 </div>
             </div>
@@ -488,7 +501,7 @@
                     <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6">Preguntas Frecuentes</h2>
                     <p class="text-slate-500">Todo lo que necesitas saber para empezar a optimizar tu patrimonio.</p>
                 </div>
-                <div class="space-y-4">
+                <div class="space-y-4 text-primary">
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
                         onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center">
@@ -507,8 +520,8 @@
                                 class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
-                            <p>Absolutamente. Firmamos un NDA digital con validez legal antes de procesar nada. Tus
-                                datos están bajo encriptación bancaria AES-256.</p>
+                            <p>Absolutamente. Antes de cualquier intercambio, firmamos un NDA digital con validez legal.
+                                Tus datos se encriptan bajo el estándar AES-256 de nivel bancario.</p>
                         </div>
                     </div>
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
@@ -539,7 +552,7 @@
     </main>
 
     <footer class="bg-white py-24 border-t border-slate-100 relative z-10 text-primary">
-        <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="max-w-screen-2xl mx-auto px-8 text-primary">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-primary">
                 <div class="col-span-1">
                     <div class="flex items-center gap-2 mb-6"><span
@@ -557,7 +570,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Empresa</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8">Empresa</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
                                 onclick="showInfo('Sobre PLANO', 'PLANO es una plataforma PropTech enfocada en la optimización de activos.')"
@@ -565,10 +578,9 @@
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Legal</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8">Legal</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
-                        <li><button
-                                onclick="showInfo('Privacidad', 'Protegemos tus datos bajo RGPD y encriptación AES-256.')"
+                        <li><button onclick="showInfo('Privacidad', 'Protegemos tus datos bajo RGPD.')"
                                 class="hover:text-primary transition-colors text-left">Privacidad RGPD</button></li>
                         <li><a href="NDA_PLANO_Audit.pdf" target="_blank"
                                 class="hover:text-primary font-bold transition-colors text-left">Descargar Borrador
@@ -603,8 +615,8 @@
                 <input type="email" name="email" required
                     class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Email corporativo">
                 <button type="submit"
-                    class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl">Enviar
-                    y recibir NDA</button>
+                    class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg">Enviar y
+                    recibir NDA</button>
             </form>
             <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary"><span
                     class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
@@ -617,33 +629,31 @@
     <div id="exitModal" class="fixed inset-0 z-[120] hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-primary/60 backdrop-blur-md" onclick="closeExitModal()"></div>
         <div
-            class="relative bg-white w-full max-w-xl rounded-4xl p-12 shadow-[0_50px_100px_rgba(0,0,0,0.3)] border border-slate-100 overflow-hidden">
+            class="relative bg-white w-full max-w-xl rounded-4xl p-12 shadow-[0_50px_100px_rgba(0,0,0,0.3)] border border-slate-100 overflow-hidden text-center">
             <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full"></div>
             <button onclick="closeExitModal()" class="absolute top-6 right-6 text-slate-300 hover:text-primary"><span
                     class="material-symbols-outlined">close</span></button>
-            <div class="relative z-10 text-center">
-                <span
-                    class="inline-block bg-emerald-500/10 text-emerald-600 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">Recurso
-                    Gratuito</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-primary mb-4 leading-tight">No
-                    dejes que tu cartera pierda rentabilidad.</h3>
-                <p class="text-slate-500 mb-10 text-lg">Descarga nuestra guía: <strong>"Los 5 errores críticos que
-                        reducen el margen de un Asset Manager en 2026"</strong>.</p>
-                <form action="https://formspree.io/f/xkopkzla" method="POST" class="flex flex-col gap-4">
-                    <input type="email" name="email" required
-                        class="w-full bg-slate-50 border-none rounded-2xl p-5 text-primary text-center"
-                        placeholder="Tu email corporativo">
-                    <button type="submit"
-                        class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl">Enviar
-                        guía a mi inbox</button>
-                </form>
-            </div>
+            <span
+                class="inline-block bg-emerald-500/10 text-emerald-600 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">Recurso
+                Gratuito</span>
+            <h3 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-primary mb-4 leading-tight">No dejes
+                que tu cartera pierda rentabilidad.</h3>
+            <p class="text-slate-500 mb-10 text-lg">Descarga nuestra guía: <strong>"Los 5 errores críticos en Asset
+                    Management en 2026"</strong>.</p>
+            <form action="https://formspree.io/f/xkopkzla" method="POST" class="flex flex-col gap-4 text-primary">
+                <input type="email" name="email" required
+                    class="w-full bg-slate-50 border-none rounded-2xl p-5 text-center"
+                    placeholder="Tu email corporativo">
+                <button type="submit"
+                    class="interactive-btn w-full bg-primary text-white py-5 rounded-2xl font-bold text-lg shadow-xl">Enviar
+                    guía ahora</button>
+            </form>
         </div>
     </div>
 
     <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
         <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
-        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary text-primary">
+        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary">
             <h4 id="infoTitle" class="text-xl font-bold mb-4"></h4>
             <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
             <button onclick="closeInfo()"
@@ -652,41 +662,26 @@
     </div>
 
     <script>
-        // Calculadora
-        const unitsInput = document.getElementById('units');
-        const rentInput = document.getElementById('rent');
-        const leakDisplay = document.getElementById('leak-total');
-        const unitsVal = document.getElementById('units-val');
-        const rentVal = document.getElementById('rent-val');
-
         function updateCalculator() {
-            const units = parseInt(unitsInput.value);
-            const rent = parseInt(rentInput.value);
-            unitsVal.innerText = units;
-            rentVal.innerText = rent.toLocaleString() + '€';
+            const units = parseInt(document.getElementById('units').value);
+            const rent = parseInt(document.getElementById('rent').value);
+            document.getElementById('units-val').innerText = units;
+            document.getElementById('rent-val').innerText = rent.toLocaleString() + '€';
             const annualLeak = units * rent * 12 * 0.12;
-            leakDisplay.innerText = Math.round(annualLeak).toLocaleString() + '€';
+            document.getElementById('leak-total').innerText = Math.round(annualLeak).toLocaleString() + '€';
         }
 
-        unitsInput.addEventListener('input', updateCalculator);
-        rentInput.addEventListener('input', updateCalculator);
+        document.getElementById('units').addEventListener('input', updateCalculator);
+        document.getElementById('rent').addEventListener('input', updateCalculator);
 
-        // Menú Móvil
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
-            if (menu.classList.contains('open')) {
-                menu.classList.remove('open');
-                icon.innerText = 'menu';
-                document.body.style.overflow = 'auto';
-            } else {
-                menu.classList.add('open');
-                icon.innerText = 'close';
-                document.body.style.overflow = 'hidden';
-            }
+            menu.classList.toggle('open');
+            icon.innerText = menu.classList.contains('open') ? 'close' : 'menu';
+            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : 'auto';
         }
 
-        // Modales
         function toggleModal() {
             const modal = document.getElementById('demoModal');
             modal.classList.toggle('hidden');
@@ -705,27 +700,14 @@
             if (document.getElementById('demoModal').classList.contains('hidden')) document.body.style.overflow = 'auto';
         }
 
-        // Exit Intent
         let exitShown = false;
-        function closeExitModal() {
-            document.getElementById('exitModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener("mouseout", (e) => {
-            if (!exitShown && e.clientY < 0) {
-                document.getElementById('exitModal').classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                exitShown = true;
-            }
-        });
+        function closeExitModal() { document.getElementById('exitModal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
+        document.addEventListener("mouseout", (e) => { if (!exitShown && e.clientY < 0) { document.getElementById('exitModal').classList.remove('hidden'); document.body.style.overflow = 'hidden'; exitShown = true; } });
 
         document.addEventListener("DOMContentLoaded", () => {
             updateCalculator();
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
-                });
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0'); });
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.animate-on-scroll').forEach((el) => {
@@ -745,27 +727,11 @@
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 const btn = e.target.querySelector('button');
-                const originalText = btn.innerText;
                 btn.innerText = "Enviando...";
-                btn.disabled = true;
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (response.ok) {
-                        if (form.closest('#exitModal')) {
-                            btn.innerText = "¡Enviado!";
-                            setTimeout(() => closeExitModal(), 1500);
-                        } else {
-                            form.classList.add('hidden');
-                            document.getElementById('successMessage').classList.remove('hidden');
-                        }
-                    }
-                } catch (error) {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
+                const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+                if (response.ok) {
+                    if (form.closest('#exitModal')) { btn.innerText = "¡Enviado!"; setTimeout(() => closeExitModal(), 1500); }
+                    else { form.classList.add('hidden'); document.getElementById('successMessage').classList.remove('hidden'); }
                 }
             });
         });
