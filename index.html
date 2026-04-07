@@ -12,7 +12,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>PLANO | Auditoría y gestión PropTech B2B</title>
+    <title>PLANO | Auditoría y gestión PropTech B2B de alto rendimiento</title>
     <meta name="description"
         content="Consigue tu Auditoría de Eficiencia gratuita. Plano: La herramienta profesional para visualizar activos y optimizar tu cartera inmobiliaria en segundos.">
 
@@ -35,7 +35,9 @@
                         "background": "#F8FAFB",
                         "surface": "#FFFFFF"
                     },
-                    borderRadius: { "4xl": "2rem" }
+                    borderRadius: {
+                        "4xl": "2rem"
+                    }
                 }
             }
         }
@@ -74,12 +76,6 @@
             z-index: 10;
         }
 
-        .responsive-h1 {
-            font-size: clamp(2.2rem, 8vw, 5.5rem);
-            line-height: 1.1;
-        }
-
-        /* CARRUSEL INFINITO RESTAURADO */
         @keyframes scroll {
             0% {
                 transform: translateX(0);
@@ -191,6 +187,11 @@
         }
 
         @media (max-width: 640px) {
+            h1 {
+                font-size: 3.25rem !important;
+                line-height: 1.1 !important;
+            }
+
             .floating-dashboard {
                 animation: none;
                 transform: none;
@@ -232,21 +233,26 @@
     </header>
 
     <main>
-        <section
-            class="relative h-[85vh] md:h-[90vh] flex flex-col justify-center items-center overflow-hidden pt-20 pb-16">
+        <section class="relative min-h-[90vh] flex flex-col items-center overflow-hidden pt-24">
             <div class="absolute inset-0 z-0">
                 <img alt="Edificio PLANO" class="w-full h-full object-cover scale-105"
                     src="Gemini_Generated_Image_gvdbc2gvdbc2gvdb.png" />
                 <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
             </div>
-            <div class="relative z-10 max-w-5xl text-center px-6">
+
+            <div class="relative z-10 flex-1 flex flex-col justify-center items-center max-w-5xl text-center px-6">
                 <span
                     class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-primary rounded-full animate-pulse">OFERTA
                     LANZAMIENTO 2026</span>
-                <h1 class="responsive-h1 font-headline font-extrabold tracking-tighter text-primary mb-8">Optimiza tu
-                    cartera con precisión quirúrgica.</h1>
-                <p class="text-lg md:text-2xl text-slate-600 max-w-2xl mx-auto mb-10 font-medium">Consigue hoy tu
-                    <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.</p>
+                <h1
+                    class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-primary mb-8 leading-none">
+                    Optimiza tu cartera con precisión quirúrgica.</h1>
+                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto font-medium">Consigue hoy tu
+                    <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.
+                </p>
+            </div>
+
+            <div class="relative z-10 w-full flex justify-center py-12 md:py-20 lg:py-24">
                 <button onclick="toggleModal()"
                     class="interactive-btn w-full sm:w-auto bg-primary text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-[0_20px_50px_rgba(26,28,30,0.3)] hover:bg-slate-800 transition-all">Solicitar
                     Auditoría gratuita</button>
@@ -280,29 +286,54 @@
                     <div class="logo-item"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
                             alt="Tailwind"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
+                            alt="Vercel"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                            class="h-8" alt="GitHub"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
+                            alt="Google Cloud"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
+                            alt="Tailwind"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
+                            alt="Vercel"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                            class="h-8" alt="GitHub"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
+                            alt="Google Cloud"></div>
+                    <div class="logo-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
+                            alt="Tailwind"></div>
                 </div>
             </div>
         </section>
 
         <section id="dashboard"
-            class="py-20 md:py-32 bg-slate-50 overflow-hidden border-b border-slate-100 relative z-10">
-            <div class="max-w-screen-2xl mx-auto px-6 md:px-8 text-primary">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+            class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100 relative z-10">
+            <div class="max-w-screen-2xl mx-auto px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div class="animate-on-scroll">
                         <span
                             class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block italic">Ecosistema
                             PLANO</span>
-                        <h2 class="text-3xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Toda tu
-                            cartera, bajo un mismo compás.</h2>
-                        <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-lg">Nuestra interfaz centraliza datos
-                            complejos en una visualización táctica. No más búsquedas en cientos de archivos.</p>
+                        <h2
+                            class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight text-primary">
+                            Toda tu cartera, bajo un mismo compás.</h2>
+                        <p class="text-xl text-slate-500 mb-10 max-w-lg">Nuestra interfaz centraliza datos complejos en
+                            una visualización táctica. No más búsquedas en cientos de archivos.</p>
                         <div
                             class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 inline-flex">
                             <span class="material-symbols-outlined text-emerald-500">map</span>
                             <span class="text-sm font-bold">Monitorización Geográfica Activa</span>
                         </div>
                     </div>
-                    <div class="relative animate-on-scroll mt-10 lg:mt-0">
+                    <div class="relative animate-on-scroll">
                         <div
                             class="absolute -top-4 -right-4 z-30 flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-slate-100 shadow-2xl">
                             <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full status-dot"></span>
@@ -310,7 +341,7 @@
                                 2.0</span>
                         </div>
                         <div
-                            class="floating-dashboard relative z-10 rounded-4xl p-1 md:p-2 bg-slate-200 shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-slate-300 overflow-hidden">
+                            class="floating-dashboard relative z-10 rounded-4xl p-2 bg-slate-200 shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-slate-300 overflow-hidden">
                             <div class="rounded-3xl overflow-hidden bg-white">
                                 <img src="dashboard.png" alt="PLANO dashboard" class="w-full h-auto">
                             </div>
@@ -322,12 +353,12 @@
 
         <section class="py-24 bg-white border-b border-slate-100 relative z-10">
             <div class="max-w-screen-xl mx-auto px-8 text-primary">
-                <div class="text-center mb-16 md:mb-20 animate-on-scroll">
+                <div class="text-center mb-20 animate-on-scroll">
                     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4">Tu optimización en tres pasos
                     </h2>
                     <p class="text-slate-500 text-lg">De datos crudos a decisiones estratégicas en 24 horas.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
                     <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100">
                         <div
                             class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
@@ -348,7 +379,7 @@
                     <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100"
                         style="transition-delay: 400ms;">
                         <div
-                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl text-white">
+                            class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
                             3</div>
                         <h4 class="text-xl font-bold mb-3">Entrega Estratégica</h4>
                         <p class="text-slate-500 text-sm leading-relaxed">Recibes tu <strong>Dashboard activo</strong> y
@@ -358,72 +389,70 @@
             </div>
         </section>
 
-        <section class="py-20 md:py-32 bg-slate-900 text-white overflow-hidden relative z-10">
-            <div class="max-w-screen-xl mx-auto px-6 md:px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+        <section class="py-32 bg-slate-900 text-white overflow-hidden relative z-10">
+            <div class="max-w-screen-xl mx-auto px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div>
-                        <h2 class="text-3xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">¿Cuánto
+                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">¿Cuánto
                             dinero estás dejando de percibir?</h2>
                         <div class="space-y-12">
                             <div>
                                 <div class="flex justify-between mb-6"><span
                                         class="text-sm font-bold uppercase tracking-widest text-slate-500">Número de
                                         Activos</span><span id="units-val"
-                                        class="text-2xl md:text-3xl font-black text-white">50</span></div>
+                                        class="text-3xl font-black text-white">50</span></div>
                                 <input type="range" id="units" min="1" max="200" value="50">
                             </div>
                             <div>
                                 <div class="flex justify-between mb-6"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Renta Mensual
+                                        class="text-sm font-bold uppercase tracking-widest text-slate-500 text-white">Renta
+                                        Mensual
                                         Media (€)</span><span id="rent-val"
-                                        class="text-2xl md:text-3xl font-black text-white">1.200€</span></div>
+                                        class="text-3xl font-black text-white">1.200€</span></div>
                                 <input type="range" id="rent" min="500" max="5000" step="50" value="1200">
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-xl rounded-4xl p-8 md:p-12 border border-white/10 text-center">
+                    <div class="bg-white/5 backdrop-blur-xl rounded-4xl p-12 border border-white/10 text-center">
                         <span class="text-emerald-400 font-bold text-sm uppercase tracking-[0.2em] mb-6 block">Fuga de
                             Rentabilidad Anual Estimada</span>
                         <div id="leak-total"
-                            class="text-5xl md:text-8xl font-black mb-6 tracking-tighter text-emerald-400">86.400€</div>
+                            class="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-emerald-400">86.400€</div>
                         <button onclick="toggleModal()"
-                            class="interactive-btn w-full bg-emerald-500 text-primary py-5 md:py-6 rounded-2xl font-bold text-lg shadow-[0_20px_50px_rgba(16,185,129,0.3)] hover:bg-emerald-400 transition-all">Recuperar
+                            class="interactive-btn w-full bg-emerald-500 text-primary py-6 rounded-2xl font-bold text-xl shadow-[0_20px_50px_rgba(16,185,129,0.3)] hover:bg-emerald-400">Recuperar
                             este capital ahora</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 md:py-32 bg-white relative z-10 text-primary">
+        <section class="py-32 bg-white relative z-10 text-primary">
             <div class="max-w-screen-xl mx-auto px-8">
-                <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
-                    <div class="w-full lg:w-1/3 animate-on-scroll flex justify-center">
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="w-full lg:w-1/3 animate-on-scroll">
                         <div class="relative">
                             <div
-                                class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white w-full max-w-[350px]">
+                                class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white">
                                 <img src="luis.png" alt="Luis Cañadilla Pons"
                                     class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                                     onerror="this.src='https://via.placeholder.com/600x750?text=Luis'">
                             </div>
                             <div
-                                class="absolute -bottom-6 -right-6 w-24 md:w-32 h-24 md:h-32 bg-primary rounded-2xl flex items-center justify-center p-6 shadow-xl">
-                                <span
-                                    class="material-symbols-outlined text-white text-5xl md:text-7xl">architecture</span>
+                                class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary rounded-2xl flex items-center justify-center p-6 shadow-xl">
+                                <span class="material-symbols-outlined text-white text-7xl">architecture</span>
                             </div>
                         </div>
                     </div>
                     <div class="w-full lg:w-2/3 animate-on-scroll" style="transition-delay: 200ms;">
-                        <span
-                            class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block italic">Visión
-                            Estratégica</span>
-                        <h2 class="text-3xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Humanizando
+                        <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block">Precisión
+                            que nace de la visión</span>
+                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Humanizando
                             el dato inmobiliario.</h2>
                         <p class="text-lg text-slate-500 max-w-2xl mb-12">“Fundé <strong>PLANO</strong> tras observar
                             cómo el Asset Management tradicional perdía millones en ineficiencias invisibles. Mi
                             objetivo es que cada metro cuadrado rinda al máximo mediante la tecnología.”</p>
-                        <div>
-                            <p class="text-primary font-black text-xl md:text-2xl tracking-tight uppercase">Luis
-                                Cañadilla Pons</p>
+                        <div class="mt-12">
+                            <p class="text-primary font-black text-2xl tracking-tight uppercase">Luis Cañadilla Pons</p>
                             <p class="text-slate-400 text-sm uppercase tracking-widest font-bold">Founder & Head of
                                 Operations</p>
                         </div>
@@ -432,14 +461,13 @@
             </div>
         </section>
 
-        <section id="precios"
-            class="animate-on-scroll section-padding py-20 md:py-32 bg-slate-50 relative z-10 text-primary">
-            <div class="max-w-screen-2xl mx-auto text-center mb-16">
+        <section id="precios" class="animate-on-scroll section-padding py-32 bg-slate-50 relative z-10 text-primary">
+            <div class="max-w-screen-2xl mx-auto text-center mb-20">
                 <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6">Inversión en
                     Eficiencia</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
                     <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between min-h-[450px] md:h-[500px]">
+                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
                         <div>
                             <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Starter Lite
                             </h4>
@@ -458,15 +486,16 @@
                             class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">Empezar
                             ahora</button>
                     </div>
+
                     <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl bg-primary text-white flex flex-col justify-between min-h-[450px] md:h-[500px] relative shadow-2xl">
+                        class="bento-card p-10 rounded-4xl bg-primary text-white flex flex-col justify-between h-[500px] relative shadow-2xl">
                         <div class="absolute top-5 right-5 bg-emerald-500 px-3 py-1 rounded-full text-[10px] font-bold">
                             POPULAR</div>
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-white/50">
-                                Real Estate Pro</h4>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Real Estate Pro
+                            </h4>
                             <div class="text-5xl font-black mb-8">490€ <span
-                                    class="text-lg font-normal text-slate-500">/mes</span></div>
+                                    class="text-lg font-normal text-white/40">/mes</span></div>
                             <ul class="text-sm text-white/70 space-y-4">
                                 <li class="flex items-center gap-2"><span
                                         class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
@@ -479,11 +508,11 @@
                         <button class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
                             Pro</button>
                     </div>
+
                     <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between min-h-[450px] md:h-[500px]">
+                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest text-primary">
-                                Global</h4>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Global</h4>
                             <div class="text-5xl font-black mb-8">Custom</div>
                             <p class="text-sm text-slate-500 leading-relaxed">Para carteras institucionales que
                                 requieren integración a medida.</p>
@@ -495,13 +524,13 @@
             </div>
         </section>
 
-        <section id="faq" class="py-20 md:py-32 bg-white relative z-10 text-primary">
+        <section id="faq" class="py-32 bg-white relative z-10 text-primary">
             <div class="max-w-4xl mx-auto px-8">
-                <div class="text-center mb-16 md:mb-20 animate-on-scroll">
+                <div class="text-center mb-20 animate-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6">Preguntas Frecuentes</h2>
                     <p class="text-slate-500">Todo lo que necesitas saber para empezar a optimizar tu patrimonio.</p>
                 </div>
-                <div class="space-y-4 text-primary">
+                <div class="space-y-4">
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
                         onclick="this.classList.toggle('active')">
                         <div class="flex justify-between items-center">
@@ -521,7 +550,7 @@
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
                             <p>Absolutamente. Antes de cualquier intercambio, firmamos un NDA digital con validez legal.
-                                Tus datos se encriptan bajo el estándar AES-256 de nivel bancario.</p>
+                                Además, tus datos se encriptan bajo el estándar AES-256 de nivel bancario.</p>
                         </div>
                     </div>
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
@@ -531,8 +560,9 @@
                                 class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
-                            <p>No. PLANO potencia tu ERP actual. Somos una capa de inteligencia y visualización que
-                                extrae valor de donde otros solo ven listas de datos.</p>
+                            <p>No. PLANO no sustituye a tu ERP o software de gestión, lo potencia. Somos una capa de
+                                inteligencia y visualización que extrae valor de donde otros solo ven listas de datos.
+                            </p>
                         </div>
                     </div>
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
@@ -543,7 +573,8 @@
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
                             <p>Analizamos hasta 3 activos de tu cartera sin coste. Detectamos el "Yield Gap", revisamos
-                                IPCs y generamos una hoja de ruta con acciones inmediatas.</p>
+                                la actualización de IPCs y generamos una hoja de ruta con 3 acciones inmediatas para
+                                mejorar tu margen.</p>
                         </div>
                     </div>
                 </div>
@@ -552,8 +583,8 @@
     </main>
 
     <footer class="bg-white py-24 border-t border-slate-100 relative z-10 text-primary">
-        <div class="max-w-screen-2xl mx-auto px-8 text-primary">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-primary">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
                 <div class="col-span-1">
                     <div class="flex items-center gap-2 mb-6"><span
                             class="material-symbols-outlined text-primary text-2xl">architecture</span><span
@@ -570,7 +601,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8">Empresa</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Empresa</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
                                 onclick="showInfo('Sobre PLANO', 'PLANO es una plataforma PropTech enfocada en la optimización de activos.')"
@@ -578,9 +609,10 @@
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8">Legal</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Legal</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
-                        <li><button onclick="showInfo('Privacidad', 'Protegemos tus datos bajo RGPD.')"
+                        <li><button
+                                onclick="showInfo('Privacidad', 'Protegemos tus datos bajo RGPD y encriptación AES-256.')"
                                 class="hover:text-primary transition-colors text-left">Privacidad RGPD</button></li>
                         <li><a href="NDA_PLANO_Audit.pdf" target="_blank"
                                 class="hover:text-primary font-bold transition-colors text-left">Descargar Borrador
@@ -629,31 +661,35 @@
     <div id="exitModal" class="fixed inset-0 z-[120] hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-primary/60 backdrop-blur-md" onclick="closeExitModal()"></div>
         <div
-            class="relative bg-white w-full max-w-xl rounded-4xl p-12 shadow-[0_50px_100px_rgba(0,0,0,0.3)] border border-slate-100 overflow-hidden text-center">
+            class="relative bg-white w-full max-w-xl rounded-4xl p-12 shadow-[0_50px_100px_rgba(0,0,0,0.3)] border border-slate-100 overflow-hidden">
             <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full"></div>
             <button onclick="closeExitModal()" class="absolute top-6 right-6 text-slate-300 hover:text-primary"><span
                     class="material-symbols-outlined">close</span></button>
-            <span
-                class="inline-block bg-emerald-500/10 text-emerald-600 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">Recurso
-                Gratuito</span>
-            <h3 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-primary mb-4 leading-tight">No dejes
-                que tu cartera pierda rentabilidad.</h3>
-            <p class="text-slate-500 mb-10 text-lg">Descarga nuestra guía: <strong>"Los 5 errores críticos en Asset
-                    Management en 2026"</strong>.</p>
-            <form action="https://formspree.io/f/xkopkzla" method="POST" class="flex flex-col gap-4 text-primary">
-                <input type="email" name="email" required
-                    class="w-full bg-slate-50 border-none rounded-2xl p-5 text-center"
-                    placeholder="Tu email corporativo">
-                <button type="submit"
-                    class="interactive-btn w-full bg-primary text-white py-5 rounded-2xl font-bold text-lg shadow-xl">Enviar
-                    guía ahora</button>
-            </form>
+            <div class="relative z-10 text-center">
+                <span
+                    class="inline-block bg-emerald-500/10 text-emerald-600 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">Recurso
+                    Gratuito</span>
+                <h3 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-primary mb-4 leading-tight">No
+                    dejes que tu cartera pierda rentabilidad.</h3>
+                <p class="text-slate-500 mb-10 text-lg">Descarga nuestra guía: <strong>"Los 5 errores críticos que
+                        reducen el margen de un Asset Manager en 2026"</strong>.</p>
+                <form action="https://formspree.io/f/xkopkzla" method="POST" class="flex flex-col gap-4">
+                    <input type="email" name="email" required
+                        class="w-full bg-slate-50 border-none rounded-2xl p-5 text-primary text-center"
+                        placeholder="Tu email corporativo">
+                    <button type="submit"
+                        class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl">Enviar
+                        guía a mi inbox</button>
+                </form>
+                <p class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">Enviamos valor, cero spam.
+                    Garantizado.</p>
+            </div>
         </div>
     </div>
 
     <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
         <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
-        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary">
+        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary text-primary">
             <h4 id="infoTitle" class="text-xl font-bold mb-4"></h4>
             <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
             <button onclick="closeInfo()"
@@ -701,13 +737,25 @@
         }
 
         let exitShown = false;
-        function closeExitModal() { document.getElementById('exitModal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
-        document.addEventListener("mouseout", (e) => { if (!exitShown && e.clientY < 0) { document.getElementById('exitModal').classList.remove('hidden'); document.body.style.overflow = 'hidden'; exitShown = true; } });
+        function closeExitModal() {
+            document.getElementById('exitModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener("mouseout", (e) => {
+            if (!exitShown && e.clientY < 0) {
+                document.getElementById('exitModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                exitShown = true;
+            }
+        });
 
         document.addEventListener("DOMContentLoaded", () => {
             updateCalculator();
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0'); });
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
+                });
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.animate-on-scroll').forEach((el) => {
@@ -727,11 +775,27 @@
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 const btn = e.target.querySelector('button');
+                const originalText = btn.innerText;
                 btn.innerText = "Enviando...";
-                const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-                if (response.ok) {
-                    if (form.closest('#exitModal')) { btn.innerText = "¡Enviado!"; setTimeout(() => closeExitModal(), 1500); }
-                    else { form.classList.add('hidden'); document.getElementById('successMessage').classList.remove('hidden'); }
+                btn.disabled = true;
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        if (form.closest('#exitModal')) {
+                            btn.innerText = "¡Enviado!";
+                            setTimeout(() => closeExitModal(), 1500);
+                        } else {
+                            form.classList.add('hidden');
+                            document.getElementById('successMessage').classList.remove('hidden');
+                        }
+                    }
+                } catch (error) {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
                 }
             });
         });
