@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
+<html class="light" lang="en">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTRM1W9CG3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-DTRM1W9CG3');
-    </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>PLANO | Auditoría y gestión PropTech B2B de alto rendimiento</title>
+    <title>PaddockPlan | Grand Prix Travel Planner</title>
     <meta name="description"
-        content="Consigue tu Auditoría de Eficiencia gratuita. Plano: La herramienta profesional para visualizar activos y optimizar tu cartera inmobiliaria en segundos.">
+        content="Plan your Grand Prix weekend smarter. Get personalized recommendations for budget, ticket type, stay, and travel style.">
 
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -30,13 +23,18 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#1A1C1E",
-                        "accent": "#4F5F79",
-                        "background": "#F8FAFB",
-                        "surface": "#FFFFFF"
+                        "primary": "#0B1220",
+                        "accent": "#E10600",
+                        "background": "#F7F8FA",
+                        "surface": "#FFFFFF",
+                        "muted": "#64748B"
                     },
                     borderRadius: {
                         "4xl": "2rem"
+                    },
+                    fontFamily: {
+                        headline: ["Manrope", "sans-serif"],
+                        body: ["Inter", "sans-serif"]
                     }
                 }
             }
@@ -48,144 +46,85 @@
             scroll-behavior: smooth;
         }
 
+        body {
+            font-family: "Inter", sans-serif;
+        }
+
         p {
             line-height: 1.75 !important;
             color: #475569;
         }
 
         .glass-nav-scrolled {
-            background: rgba(248, 250, 251, 0.85);
+            background: rgba(247, 248, 250, 0.9);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
         }
 
         .interactive-btn {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
             cursor: pointer;
         }
 
+        .interactive-btn:hover {
+            transform: translateY(-2px);
+        }
+
         .bento-card {
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             backface-visibility: hidden;
         }
 
         .bento-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
-            z-index: 10;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(calc(-250px * 8));
-            }
-        }
-
-        .logo-slider-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .logo-slider {
-            display: flex;
-            width: calc(250px * 16);
-            animation: scroll 30s linear infinite;
-        }
-
-        .logo-item {
-            width: 250px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        input[type=range] {
-            appearance: none;
-            width: 100%;
-            height: 6px;
-            background: #334155;
-            border-radius: 5px;
-            outline: none;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            background: #34d399;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.2s;
-            border: 3px solid #1A1C1E;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px) rotate(2deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(1deg);
-            }
-
-            100% {
-                transform: translateY(0px) rotate(2deg);
-            }
-        }
-
-        .floating-dashboard {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .status-dot {
-            animation: pulse-green 2s infinite;
-        }
-
-        @keyframes pulse-green {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.4;
-            }
-
-            100% {
-                opacity: 1;
-            }
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.10);
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+            transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
         }
 
         .faq-item.active .faq-answer {
             max-height: 1000px;
-            transition: max-height 1s ease-in-out;
+            transition: max-height 0.9s ease-in-out;
         }
 
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
         }
 
+        .hero-grid {
+            background-image:
+                linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        .glow-red {
+            box-shadow: 0 20px 60px rgba(225, 6, 0, 0.16);
+        }
+
+        .plan-card {
+            background:
+                radial-gradient(circle at top right, rgba(225, 6, 0, 0.08), transparent 35%),
+                linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .result-card {
+            transition: all 0.25s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 640px) {
             h1 {
-                font-size: 3.25rem !important;
-                line-height: 1.1 !important;
-            }
-
-            .floating-dashboard {
-                animation: none;
-                transform: none;
+                font-size: 3.15rem !important;
+                line-height: 1.04 !important;
             }
         }
     </style>
@@ -193,338 +132,532 @@
 
 <body class="bg-background text-primary font-body antialiased">
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-500">
-        <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-8 py-5">
+        <div class="flex justify-between items-center max-w-screen-2xl mx-auto px-6 md:px-8 py-5">
             <div class="flex items-center gap-2 group cursor-pointer"
                 onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <span
-                    class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:rotate-90 duration-500">architecture</span>
-                <span class="text-xl font-extrabold tracking-tighter font-headline">PLANO</span>
+                    class="material-symbols-outlined text-accent text-3xl transition-transform group-hover:rotate-12 duration-500">flag</span>
+                <span class="text-xl font-extrabold tracking-tighter font-headline">PaddockPlan</span>
             </div>
-            <nav class="hidden md:flex gap-10 items-center">
-                <a class="text-sm font-semibold hover:text-accent transition-colors" href="#dashboard">Plataforma</a>
+
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="text-sm font-semibold hover:text-accent transition-colors" href="#planner">Planner</a>
                 <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
-                    href="#precios">Precios</a>
+                    href="#guides">Guides</a>
+                <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+                    href="#pricing">Pricing</a>
                 <a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#faq">FAQ</a>
-                <button onclick="toggleModal()"
-                    class="interactive-btn bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/10">Auditoría
-                    Gratis</button>
+                <button onclick="openPlannerModal()"
+                    class="interactive-btn bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/10">
+                    Try free planner
+                </button>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="section-padding relative h-[90vh] flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <img alt="Edificio PLANO" class="w-full h-full object-cover scale-105"
-                    src="Gemini_Generated_Image_gvdbc2gvdbc2gvdb.png" />
-                <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
-            </div>
-            <div class="relative z-10 max-w-5xl text-center px-6">
-                <span
-                    class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-primary rounded-full animate-pulse">OFERTA
-                    LANZAMIENTO 2026</span>
-                <h1
-                    class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-primary mb-8 leading-none">
-                    Optimiza tu cartera con precisión quirúrgica.</h1>
-                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-medium">Consigue hoy tu
-                    <strong>Auditoría de eficiencia gratuita</strong> y descubre dónde estás perdiendo rentabilidad.</p>
-                <button onclick="toggleModal()"
-                    class="interactive-btn bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg">Solicitar
-                    Auditoría gratuita</button>
-            </div>
-        </section>
+        <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden hero-grid">
+            <div class="absolute inset-0 bg-gradient-to-b from-white via-background to-slate-100"></div>
+            <div class="absolute top-24 left-[-8rem] w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-16 right-[-8rem] w-80 h-80 bg-slate-900/5 rounded-full blur-3xl"></div>
 
-        <section class="py-16 border-y border-slate-100 bg-white overflow-hidden relative z-10">
-            <div class="logo-slider-container">
-                <div class="logo-slider grayscale opacity-40">
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
-                            alt="Vercel"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                            class="h-8" alt="GitHub"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
-                            alt="Google Cloud"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
-                            alt="Tailwind"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" class="h-6"
-                            alt="Vercel"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                            class="h-8" alt="GitHub"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" class="h-8"
-                            alt="Google Cloud"></div>
-                    <div class="logo-item"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="h-6"
-                            alt="Tailwind"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-28">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span
+                            class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-accent rounded-full">
+                            GRAND PRIX TRAVEL PLANNER
+                        </span>
+
+                        <h1
+                            class="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter text-primary mb-8 leading-none">
+                            Plan your Grand Prix weekend smarter.
+                        </h1>
+
+                        <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mb-10 font-medium">
+                            Get a personalized Grand Prix plan for <strong>budget, ticket type, stay, and travel
+                                style</strong> —
+                            before you waste time comparing dozens of tabs.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="document.getElementById('planner').scrollIntoView({behavior:'smooth'})"
+                                class="interactive-btn bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg glow-red">
+                                Try the free planner
+                            </button>
+                            <button onclick="document.getElementById('guides').scrollIntoView({behavior:'smooth'})"
+                                class="interactive-btn bg-white border border-slate-200 text-primary px-8 py-4 rounded-xl font-bold text-lg">
+                                Explore GP guides
+                            </button>
+                        </div>
+
+                        <div class="mt-10 flex flex-col sm:flex-row gap-6 text-sm text-slate-500 font-medium">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent text-base">check_circle</span>
+                                Fast travel recommendations
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent text-base">check_circle</span>
+                                Better budget clarity
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent text-base">check_circle</span>
+                                Free quick plan
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative animate-on-scroll">
+                        <div
+                            class="absolute -top-4 -right-4 z-30 flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-slate-100 shadow-2xl">
+                            <span class="w-2.5 h-2.5 bg-accent rounded-full animate-pulse"></span>
+                            <span class="text-[10px] font-bold text-primary tracking-[0.1em] uppercase">Live Monza
+                                Sample</span>
+                        </div>
+
+                        <div
+                            class="relative z-10 rounded-4xl p-3 bg-slate-200 shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-slate-300 overflow-hidden">
+                            <div class="rounded-3xl overflow-hidden plan-card p-6 md:p-8">
+                                <div class="flex items-center justify-between mb-6">
+                                    <div>
+                                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Sample
+                                            weekend plan</p>
+                                        <h3 class="text-2xl font-extrabold tracking-tight text-primary">Italian Grand
+                                            Prix</h3>
+                                    </div>
+                                    <div class="bg-accent text-white px-3 py-1.5 rounded-full text-xs font-bold">Premium
+                                        preview</div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-white rounded-2xl p-4 border border-slate-100 result-card">
+                                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">
+                                            Budget</p>
+                                        <p class="text-lg font-extrabold text-primary">€900 – €1,450</p>
+                                    </div>
+                                    <div class="bg-white rounded-2xl p-4 border border-slate-100 result-card">
+                                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">
+                                            Ticket type</p>
+                                        <p class="text-lg font-extrabold text-primary">Grandstand</p>
+                                    </div>
+                                    <div class="bg-white rounded-2xl p-4 border border-slate-100 result-card">
+                                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">Stay
+                                            area</p>
+                                        <p class="text-lg font-extrabold text-primary">Milan</p>
+                                    </div>
+                                    <div class="bg-white rounded-2xl p-4 border border-slate-100 result-card">
+                                        <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">Trip
+                                            length</p>
+                                        <p class="text-lg font-extrabold text-primary">3 nights</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-primary text-white rounded-3xl p-5">
+                                    <p class="text-xs uppercase tracking-widest text-white/50 font-bold mb-3">Weekend
+                                        notes</p>
+                                    <ul class="space-y-3 text-sm text-white/80">
+                                        <li class="flex items-start gap-2">
+                                            <span class="material-symbols-outlined text-accent text-base">flag</span>
+                                            Arrive on Friday if you want a smoother circuit transfer and lower stress.
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="material-symbols-outlined text-accent text-base">hotel</span>
+                                            Milan gives you better hotel choice than staying too close to Monza.
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="material-symbols-outlined text-accent text-base">schedule</span>
+                                            A grandstand setup is the best value if this is your first European GP.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="dashboard"
-            class="py-32 section-padding bg-slate-50 overflow-hidden border-b border-slate-100 relative z-10">
-            <div class="max-w-screen-2xl mx-auto px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div class="animate-on-scroll">
-                        <span
-                            class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block italic">Ecosistema
-                            PLANO</span>
-                        <h2
-                            class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight text-primary">
-                            Toda tu cartera, bajo un mismo compás.</h2>
-                        <p class="text-xl text-slate-500 mb-10 max-w-lg">Nuestra interfaz centraliza datos complejos en
-                            una visualización táctica. No más búsquedas en cientos de archivos.</p>
-                        <div
-                            class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 inline-flex">
-                            <span class="material-symbols-outlined text-emerald-500">map</span>
-                            <span class="text-sm font-bold">Monitorización Geográfica Activa</span>
-                        </div>
+        <section class="py-20 bg-white border-y border-slate-100 relative z-10">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100">
+                        <p class="text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-3">Built for
+                            decision-making</p>
+                        <h3 class="text-xl font-extrabold tracking-tight mb-2">Not another generic guide</h3>
+                        <p class="text-sm text-slate-500">PaddockPlan helps you choose faster and plan more clearly.</p>
                     </div>
-                    <div class="relative animate-on-scroll">
-                        <div
-                            class="absolute -top-4 -right-4 z-30 flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-slate-100 shadow-2xl">
-                            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full status-dot"></span>
-                            <span class="text-[10px] font-bold text-primary tracking-[0.1em] uppercase">Live Engine
-                                2.0</span>
+                    <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100">
+                        <p class="text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-3">Free to try</p>
+                        <h3 class="text-xl font-extrabold tracking-tight mb-2">Quick plan in under a minute</h3>
+                        <p class="text-sm text-slate-500">See whether the trip makes sense before committing to the full
+                            plan.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100">
+                        <p class="text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-3">Designed for GP
+                            travelers</p>
+                        <h3 class="text-xl font-extrabold tracking-tight mb-2">Budget, stay, and ticket logic</h3>
+                        <p class="text-sm text-slate-500">Less random browsing. More useful recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guides" class="py-28 bg-slate-50 border-b border-slate-100 relative z-10">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-8">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <span class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block">Start with the
+                        right GP</span>
+                    <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 leading-tight text-primary">
+                        Explore the first Grand Prix guides
+                    </h2>
+                    <p class="text-xl text-slate-500 max-w-2xl mx-auto">
+                        We start with the most travel-friendly races for first-time and repeat fans.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bento-card bg-white rounded-4xl p-8 border border-slate-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Guide 01</p>
+                            <span class="material-symbols-outlined text-accent">flight_takeoff</span>
                         </div>
-                        <div
-                            class="floating-dashboard relative z-10 rounded-4xl p-2 bg-slate-200 shadow-[0_50px_100px_rgba(0,0,0,0.1)] border border-slate-300 overflow-hidden">
-                            <div class="rounded-3xl overflow-hidden bg-white">
-                                <img src="dashboard.png" alt="PLANO dashboard" class="w-full h-auto">
-                            </div>
+                        <h3 class="text-2xl font-extrabold tracking-tight mb-3">Monza</h3>
+                        <p class="text-slate-500 mb-6">Fast, iconic, emotional — and much easier to plan well if you
+                            avoid the obvious mistakes.</p>
+                        <button onclick="openGuideModal('Monza')"
+                            class="interactive-btn w-full bg-slate-50 hover:bg-slate-100 py-4 rounded-xl font-bold text-primary">
+                            View sample guide
+                        </button>
+                    </div>
+
+                    <div class="bento-card bg-white rounded-4xl p-8 border border-slate-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Guide 02</p>
+                            <span class="material-symbols-outlined text-accent">stadium</span>
                         </div>
+                        <h3 class="text-2xl font-extrabold tracking-tight mb-3">Silverstone</h3>
+                        <p class="text-slate-500 mb-6">One of the best pure racing experiences on the calendar, but
+                            planning matters more than people think.</p>
+                        <button onclick="openGuideModal('Silverstone')"
+                            class="interactive-btn w-full bg-slate-50 hover:bg-slate-100 py-4 rounded-xl font-bold text-primary">
+                            View sample guide
+                        </button>
+                    </div>
+
+                    <div class="bento-card bg-white rounded-4xl p-8 border border-slate-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Guide 03</p>
+                            <span class="material-symbols-outlined text-accent">sunny</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold tracking-tight mb-3">Barcelona</h3>
+                        <p class="text-slate-500 mb-6">Good weather, easy city access, and a strong first-time Grand
+                            Prix option if your budget is under control.</p>
+                        <button onclick="openGuideModal('Barcelona')"
+                            class="interactive-btn w-full bg-slate-50 hover:bg-slate-100 py-4 rounded-xl font-bold text-primary">
+                            View sample guide
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="py-24 bg-white border-b border-slate-100 relative z-10">
-            <div class="max-w-screen-xl mx-auto px-8 text-primary">
-                <div class="text-center mb-20 animate-on-scroll">
-                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4">Tu optimización en tres pasos
-                    </h2>
-                    <p class="text-slate-500 text-lg">De datos crudos a decisiones estratégicas en 24 horas.</p>
+            <div class="max-w-screen-xl mx-auto px-6 md:px-8 text-primary">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4">How it works</h2>
+                    <p class="text-slate-500 text-lg">From scattered tabs to a better Grand Prix decision in minutes.
+                    </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-                    <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                    <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 animate-on-scroll">
                         <div
                             class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
                             1</div>
-                        <h4 class="text-xl font-bold mb-3">Conexión Segura</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Firma el <strong>NDA digital</strong> y
-                            comparte tu cartera (Excel/PDF).</p>
+                        <h4 class="text-xl font-bold mb-3">Pick a Grand Prix</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Choose the race you want to attend and the
+                            kind of trip you have in mind.</p>
                     </div>
-                    <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100"
+
+                    <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 animate-on-scroll"
                         style="transition-delay: 200ms;">
                         <div
                             class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
                             2</div>
-                        <h4 class="text-xl font-bold mb-3">Análisis de Precisión</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Detectamos fugas de rentabilidad y brechas de
-                            mercado.</p>
+                        <h4 class="text-xl font-bold mb-3">Set your constraints</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Budget, travel style, and trip length tell us
+                            what kind of weekend fits you best.</p>
                     </div>
-                    <div class="relative z-10 animate-on-scroll p-8 bg-slate-50 rounded-3xl border border-slate-100"
+
+                    <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 animate-on-scroll"
                         style="transition-delay: 400ms;">
                         <div
                             class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-xl">
                             3</div>
-                        <h4 class="text-xl font-bold mb-3">Entrega Estratégica</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Recibes tu <strong>Dashboard activo</strong> y
-                            reporte de impacto.</p>
+                        <h4 class="text-xl font-bold mb-3">Get your plan</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">See your quick GP recommendation free, then
+                            unlock the full weekend plan if it looks right.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-32 bg-slate-900 text-white overflow-hidden relative z-10">
-            <div class="max-w-screen-xl mx-auto px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <section id="planner" class="py-28 bg-primary text-white overflow-hidden relative z-10">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     <div>
-                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">¿Cuánto
-                            dinero estás dejando de percibir?</h2>
-                        <div class="space-y-12">
+                        <span class="text-accent font-bold text-sm uppercase tracking-widest mb-4 block">Free
+                            tool</span>
+                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">
+                            Quick GP Planner
+                        </h2>
+                        <p class="text-lg text-white/70 mb-10 max-w-xl">
+                            Answer a few simple questions and get a fast recommendation for your Grand Prix weekend.
+                        </p>
+
+                        <div class="space-y-8">
                             <div>
-                                <div class="flex justify-between mb-6"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Número de
-                                        Activos</span><span id="units-val"
-                                        class="text-3xl font-black text-white">50</span></div>
-                                <input type="range" id="units" min="1" max="200" value="50">
+                                <div class="flex justify-between mb-4">
+                                    <span class="text-sm font-bold uppercase tracking-widest text-white/50">Grand
+                                        Prix</span>
+                                    <span id="gp-label" class="text-xl font-black text-white">Monza</span>
+                                </div>
+                                <input type="range" id="gp-range" min="1" max="3" value="1">
                             </div>
+
                             <div>
-                                <div class="flex justify-between mb-6"><span
-                                        class="text-sm font-bold uppercase tracking-widest text-slate-500">Renta Mensual
-                                        Media (€)</span><span id="rent-val"
-                                        class="text-3xl font-black text-white">1.200€</span></div>
-                                <input type="range" id="rent" min="500" max="5000" step="50" value="1200">
+                                <div class="flex justify-between mb-4">
+                                    <span class="text-sm font-bold uppercase tracking-widest text-white/50">Budget
+                                        level</span>
+                                    <span id="budget-label" class="text-xl font-black text-white">Balanced</span>
+                                </div>
+                                <input type="range" id="budget-range" min="1" max="3" value="2">
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-4">
+                                    <span class="text-sm font-bold uppercase tracking-widest text-white/50">Trip
+                                        length</span>
+                                    <span id="length-label" class="text-xl font-black text-white">3 nights</span>
+                                </div>
+                                <input type="range" id="length-range" min="1" max="3" value="2">
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-4">
+                                    <span class="text-sm font-bold uppercase tracking-widest text-white/50">Travel
+                                        style</span>
+                                    <span id="style-label" class="text-xl font-black text-white">Comfort-first</span>
+                                </div>
+                                <input type="range" id="style-range" min="1" max="3" value="2">
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-xl rounded-4xl p-12 border border-white/10 text-center">
-                        <span class="text-emerald-400 font-bold text-sm uppercase tracking-[0.2em] mb-6 block">Fuga de
-                            Rentabilidad Anual Estimada</span>
-                        <div id="leak-total"
-                            class="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-emerald-400">86.400€</div>
-                        <button onclick="toggleModal()"
-                            class="interactive-btn w-full bg-emerald-500 text-primary py-6 rounded-2xl font-bold text-xl shadow-[0_20px_50px_rgba(16,185,129,0.3)] hover:bg-emerald-400">Recuperar
-                            este capital ahora</button>
+
+                    <div class="bg-white/5 backdrop-blur-xl rounded-4xl p-8 md:p-10 border border-white/10">
+                        <span class="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-6 block">Your quick
+                            result</span>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                <p class="text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Suggested GP
+                                </p>
+                                <p id="result-gp" class="text-2xl font-black">Monza</p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                <p class="text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Budget
+                                    estimate</p>
+                                <p id="result-budget" class="text-2xl font-black">€900 – €1,450</p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                <p class="text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Ticket type
+                                </p>
+                                <p id="result-ticket" class="text-2xl font-black">Grandstand</p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                <p class="text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Stay style</p>
+                                <p id="result-stay" class="text-2xl font-black">City base</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-3xl p-6 text-primary mb-6">
+                            <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-3">Three quick tips
+                            </p>
+                            <ul id="tips-list" class="space-y-3 text-sm text-slate-600">
+                                <li>Arrive on Friday to reduce transfer stress.</li>
+                                <li>Book a city stay if you want more flexibility.</li>
+                                <li>Grandstand is the best value for a first trip.</li>
+                            </ul>
+                        </div>
+
+                        <button onclick="openPlannerModal()"
+                            class="interactive-btn w-full bg-accent text-white py-5 rounded-2xl font-bold text-lg shadow-[0_20px_50px_rgba(225,6,0,0.25)]">
+                            Unlock full weekend plan
+                        </button>
+
+                        <p class="mt-4 text-xs text-white/50 text-center">
+                            Includes stay area guidance, transport tips, checklist, and a fuller budget breakdown.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-32 bg-white relative z-10 text-primary">
-            <div class="max-w-screen-xl mx-auto px-8">
-                <div class="flex flex-col lg:flex-row items-center gap-20">
-                    <div class="w-full lg:w-1/3 animate-on-scroll">
-                        <div class="relative">
-                            <div
-                                class="aspect-[4/5] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white">
-                                <img src="luis.png" alt="Luis Cañadilla Pons"
-                                    class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                                    onerror="this.src='https://via.placeholder.com/600x750?text=Luis'">
-                            </div>
-                            <div
-                                class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary rounded-2xl flex items-center justify-center p-6 shadow-xl">
-                                <span class="material-symbols-outlined text-white text-7xl">architecture</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full lg:w-2/3 animate-on-scroll" style="transition-delay: 200ms;">
-                        <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4 block">Precisión
-                            que nace de la visión</span>
-                        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Humanizando
-                            el dato inmobiliario.</h2>
-                        <p class="text-lg text-slate-500 max-w-2xl mb-12">“Fundé <strong>PLANO</strong> tras observar
-                            cómo el Asset Management tradicional perdía millones en ineficiencias invisibles. Mi
-                            objetivo es que cada metro cuadrado rinda al máximo mediante la tecnología.”</p>
-                        <div class="mt-12">
-                            <p class="text-primary font-black text-2xl tracking-tight uppercase">Luis Cañadilla Pons</p>
-                            <p class="text-slate-400 text-sm uppercase tracking-widest font-bold">Founder & Head of
-                                Operations</p>
-                        </div>
-                    </div>
+        <section id="pricing" class="py-28 bg-slate-50 relative z-10 text-primary">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-8">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6">Simple pricing
+                    </h2>
+                    <p class="text-slate-500 text-lg max-w-2xl mx-auto">
+                        Try the free planner first. Upgrade only if you want the complete weekend recommendation.
+                    </p>
                 </div>
-            </div>
-        </section>
 
-        <section id="precios" class="animate-on-scroll section-padding py-32 bg-slate-50 relative z-10 text-primary">
-            <div class="max-w-screen-2xl mx-auto text-center mb-20">
-                <h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-6">Inversión en
-                    Eficiencia</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
-                    <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div
+                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between min-h-[430px]">
                         <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Starter Lite
-                            </h4>
-                            <div class="text-5xl font-black mb-8">149€ <span
-                                    class="text-lg font-normal text-slate-400">/mes</span></div>
+                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Free</h4>
+                            <div class="text-5xl font-black mb-8">0€</div>
                             <ul class="text-sm text-slate-500 space-y-4">
-                                <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
-                                    Hasta 10 activos</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
-                                    Auditoría mensual</li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                    Quick GP recommendation
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                    Budget range estimate
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                    Ticket type suggestion
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                    Three quick travel tips
+                                </li>
                             </ul>
                         </div>
-                        <button
-                            class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">Empezar
-                            ahora</button>
+
+                        <button onclick="document.getElementById('planner').scrollIntoView({behavior:'smooth'})"
+                            class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">
+                            Try free planner
+                        </button>
                     </div>
 
-                    <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl bg-primary text-white flex flex-col justify-between h-[500px] relative shadow-2xl">
-                        <div class="absolute top-5 right-5 bg-emerald-500 px-3 py-1 rounded-full text-[10px] font-bold">
-                            POPULAR</div>
+                    <div
+                        class="bento-card p-10 rounded-4xl bg-primary text-white flex flex-col justify-between min-h-[430px] relative shadow-2xl">
+                        <div class="absolute top-5 right-5 bg-accent px-3 py-1 rounded-full text-[10px] font-bold">
+                            RECOMMENDED
+                        </div>
                         <div>
-                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest">Real Estate Pro
+                            <h4 class="text-xs font-bold text-white/50 mb-4 uppercase tracking-widest">Full Weekend Plan
                             </h4>
-                            <div class="text-5xl font-black mb-8">490€ <span
-                                    class="text-lg font-normal text-white/40">/mes</span></div>
+                            <div class="text-5xl font-black mb-8">€19 <span
+                                    class="text-lg font-normal text-white/40">one-time</span></div>
                             <ul class="text-sm text-white/70 space-y-4">
-                                <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
-                                    Activos ilimitados</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
-                                    Análisis OPEX Avanzado</li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+                                    Detailed budget breakdown
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+                                    Recommended stay area
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+                                    Ticket and experience guidance
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+                                    Transport and access notes
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+                                    Downloadable trip checklist
+                                </li>
                             </ul>
                         </div>
-                        <button class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">Acceso
-                            Pro</button>
-                    </div>
 
-                    <div onclick="toggleModal()"
-                        class="bento-card p-10 rounded-4xl border border-slate-200 bg-white flex flex-col justify-between h-[500px]">
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">Global</h4>
-                            <div class="text-5xl font-black mb-8">Custom</div>
-                            <p class="text-sm text-slate-500 leading-relaxed">Para carteras institucionales que
-                                requieren integración a medida.</p>
-                        </div>
-                        <button
-                            class="interactive-btn w-full py-4 rounded-xl border-2 border-primary font-bold text-primary">Contactar</button>
+                        <button onclick="openPlannerModal()"
+                            class="interactive-btn w-full py-4 rounded-xl bg-white text-primary font-bold">
+                            Unlock premium plan
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-32 bg-white relative z-10 text-primary">
-            <div class="max-w-4xl mx-auto px-8">
-                <div class="text-center mb-20 animate-on-scroll">
-                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6">Preguntas Frecuentes</h2>
-                    <p class="text-slate-500">Todo lo que necesitas saber para empezar a optimizar tu patrimonio.</p>
+        <section id="faq" class="py-28 bg-white relative z-10 text-primary">
+            <div class="max-w-4xl mx-auto px-6 md:px-8">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6">Frequently asked questions
+                    </h2>
+                    <p class="text-slate-500">What to expect from PaddockPlan at this first stage.</p>
                 </div>
+
                 <div class="space-y-4">
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
                         onclick="this.classList.toggle('active')">
-                        <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-lg">¿Cuánto tiempo me va a quitar subir los datos?</h4><span
-                                class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+                        <div class="flex justify-between items-center gap-4">
+                            <h4 class="font-bold text-lg">Is PaddockPlan an official Formula 1 product?</h4>
+                            <span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
-                            <p>Menos de 5 minutos. Solo necesitamos tu exportación actual a Excel o PDF. Nosotros nos
-                                encargamos de limpiar el dato y mapearlo en PLANO.</p>
+                            <p>No. PaddockPlan is an independent planning tool designed to help fans make smarter Grand
+                                Prix travel decisions.</p>
                         </div>
                     </div>
+
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
                         onclick="this.classList.toggle('active')">
-                        <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-lg">¿Es seguro compartir mi información financiera?</h4><span
-                                class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+                        <div class="flex justify-between items-center gap-4">
+                            <h4 class="font-bold text-lg">Does PaddockPlan sell tickets or travel packages?</h4>
+                            <span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
-                            <p>Absolutamente. Antes de cualquier intercambio, firmamos un NDA digital con validez legal.
-                                Además, tus datos se encriptan bajo el estándar AES-256 de nivel bancario.</p>
+                            <p>No. We help you plan better. We do not currently sell official tickets, hospitality, or
+                                travel packages directly.</p>
                         </div>
                     </div>
+
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
                         onclick="this.classList.toggle('active')">
-                        <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-lg">¿Tengo que cambiar mi software de gestión actual?</h4><span
-                                class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+                        <div class="flex justify-between items-center gap-4">
+                            <h4 class="font-bold text-lg">How accurate are the budget estimates?</h4>
+                            <span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
-                            <p>No. PLANO no sustituye a tu ERP o software de gestión, lo potencia. Somos una capa de
-                                inteligencia y visualización que extrae valor de donde otros solo ven listas de datos.
-                            </p>
+                            <p>They are directional planning estimates, not live booking guarantees. The goal is to help
+                                you decide faster and more clearly.</p>
                         </div>
                     </div>
+
                     <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
                         onclick="this.classList.toggle('active')">
-                        <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-lg">¿Qué incluye exactamente la Auditoría gratuita?</h4><span
-                                class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+                        <div class="flex justify-between items-center gap-4">
+                            <h4 class="font-bold text-lg">Which Grand Prix weekends are supported first?</h4>
+                            <span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
                         </div>
                         <div class="faq-answer mt-4 text-slate-500">
-                            <p>Analizamos hasta 3 activos de tu cartera sin coste. Detectamos el "Yield Gap", revisamos
-                                la actualización de IPCs y generamos una hoja de ruta con 3 acciones inmediatas para
-                                mejorar tu margen.</p>
+                            <p>We start with Monza, Silverstone, and Barcelona, and expand from there based on demand
+                                and product feedback.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-100 rounded-3xl p-6 hover:bg-slate-50 transition-colors cursor-pointer"
+                        onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center gap-4">
+                            <h4 class="font-bold text-lg">Do I need an account to use the free planner?</h4>
+                            <span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+                        </div>
+                        <div class="faq-answer mt-4 text-slate-500">
+                            <p>No. The free planner is designed to be friction-light. We only ask for your email if you
+                                want the full weekend plan or guide updates.</p>
                         </div>
                     </div>
                 </div>
@@ -532,144 +665,343 @@
         </section>
     </main>
 
-    <footer class="bg-white py-24 border-t border-slate-100 relative z-10 text-primary">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+    <footer class="bg-white py-20 border-t border-slate-100 relative z-10 text-primary">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1">
-                    <div class="flex items-center gap-2 mb-6"><span
-                            class="material-symbols-outlined text-primary text-2xl">architecture</span><span
-                            class="text-xl font-bold tracking-tighter">PLANO</span></div>
-                    <p class="text-slate-400 text-sm leading-relaxed">Precisión quirúrgica en Real Estate. Built with AI
-                        for Asset Managers.</p>
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-accent text-2xl">flag</span>
+                        <span class="text-xl font-bold tracking-tighter">PaddockPlan</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Smarter Grand Prix planning for fans who want better decisions before race weekend.
+                    </p>
                 </div>
+
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8">Producto</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8">Product</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
-                        <li><a href="#dashboard" class="hover:text-primary transition-colors">Plataforma</a></li>
-                        <li><a href="#precios" class="hover:text-primary transition-colors">Precios</a></li>
-                        <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+                        <li><a href="#planner" class="hover:text-primary transition-colors">Planner</a></li>
+                        <li><a href="#guides" class="hover:text-primary transition-colors">GP Guides</a></li>
+                        <li><a href="#pricing" class="hover:text-primary transition-colors">Pricing</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Empresa</h5>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Company</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
-                                onclick="showInfo('Sobre PLANO', 'PLANO es una plataforma PropTech enfocada en la optimización de activos.')"
-                                class="hover:text-primary transition-colors text-left">Sobre PLANO</button></li>
+                                onclick="showInfo('About PaddockPlan', 'PaddockPlan is an independent Grand Prix planning product built to help fans make smarter travel decisions.')"
+                                class="hover:text-primary transition-colors text-left">About</button></li>
                     </ul>
                 </div>
+
                 <div>
                     <h5 class="font-bold text-xs uppercase tracking-widest mb-8 text-primary">Legal</h5>
                     <ul class="text-sm text-slate-500 space-y-4">
                         <li><button
-                                onclick="showInfo('Privacidad', 'Protegemos tus datos bajo RGPD y encriptación AES-256.')"
-                                class="hover:text-primary transition-colors text-left">Privacidad RGPD</button></li>
-                        <li><a href="NDA_PLANO_Audit.pdf" target="_blank"
-                                class="hover:text-primary font-bold transition-colors text-left">Descargar Borrador
-                                NDA</a></li>
+                                onclick="showInfo('Disclaimer', 'PaddockPlan is not affiliated with, endorsed by, or officially connected to Formula 1, Formula One Management, or any Grand Prix organizer.')"
+                                class="hover:text-primary transition-colors text-left">Disclaimer</button></li>
                     </ul>
                 </div>
             </div>
+
             <div
                 class="pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-xs">
-                <p>© 2026 PLANO Asset Management Technologies.</p>
-                <span class="flex items-center gap-2 font-bold text-slate-300 uppercase tracking-widest"><span
-                        class="w-2 h-2 bg-emerald-500 rounded-full"></span> System Online</span>
+                <p>© 2026 PaddockPlan.</p>
+                <span class="flex items-center gap-2 font-bold text-slate-300 uppercase tracking-widest">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                    Beta live
+                </span>
             </div>
         </div>
     </footer>
 
-    <div id="demoModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" onclick="toggleModal()"></div>
-        <div class="relative bg-white w-full max-w-lg rounded-3xl p-10 shadow-2xl">
-            <button onclick="toggleModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary"><span
-                    class="material-symbols-outlined">close</span></button>
-            <div class="mb-8">
-                <h3 class="text-3xl font-extrabold tracking-tighter mb-2 text-primary">Solicita tu Auditoría</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Recibe tu reporte táctico y acceso al Dashboard
-                    activo.</p>
+    <!-- MAIN MODAL -->
+    <div id="plannerModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-primary/50 backdrop-blur-sm" onclick="closePlannerModal()"></div>
+        <div class="relative bg-white w-full max-w-lg rounded-3xl p-8 md:p-10 shadow-2xl">
+            <button onclick="closePlannerModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <div id="plannerFormWrap">
+                <div class="mb-8">
+                    <h3 class="text-3xl font-extrabold tracking-tighter mb-2 text-primary">Unlock your full weekend plan
+                    </h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Leave your email and we’ll send you early access details and your premium planning flow.
+                    </p>
+                </div>
+
+                <form id="leadForm" class="space-y-4 text-primary">
+                    <input type="text" name="name" required
+                        class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Your name">
+                    <input type="email" name="email" required
+                        class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Your email">
+                    <input type="text" name="gp" class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary"
+                        placeholder="Preferred Grand Prix (optional)">
+                    <button type="submit"
+                        class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg">
+                        Request premium access
+                    </button>
+                </form>
             </div>
-            <form id="leadForm" class="space-y-4 text-primary" action="https://formspree.io/f/xkopkzla" method="POST">
-                <input type="text" name="name" required
-                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Nombre completo">
-                <input type="text" name="company" required
-                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Empresa">
-                <input type="email" name="email" required
-                    class="w-full bg-slate-50 border-none rounded-xl p-4 text-primary" placeholder="Email corporativo">
-                <button type="submit"
-                    class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg">Enviar y
-                    recibir NDA</button>
-            </form>
-            <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary"><span
-                    class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
-                <h3 class="text-2xl font-bold mb-2">Solicitud Recibida</h3>
-                <p class="text-slate-500">Te hemos enviado el NDA firmado para comenzar.</p>
+
+            <div id="successMessage" class="hidden flex-col items-center py-8 text-center text-primary">
+                <span class="material-symbols-outlined text-6xl text-emerald-500 mb-4">check_circle</span>
+                <h3 class="text-2xl font-bold mb-2">You’re in</h3>
+                <p class="text-slate-500">We’ve recorded your interest for the full weekend plan.</p>
             </div>
         </div>
     </div>
 
+    <!-- EXIT MODAL -->
     <div id="exitModal" class="fixed inset-0 z-[120] hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-primary/60 backdrop-blur-md" onclick="closeExitModal()"></div>
         <div
-            class="relative bg-white w-full max-w-xl rounded-4xl p-12 shadow-[0_50px_100px_rgba(0,0,0,0.3)] border border-slate-100 overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full"></div>
-            <button onclick="closeExitModal()" class="absolute top-6 right-6 text-slate-300 hover:text-primary"><span
-                    class="material-symbols-outlined">close</span></button>
+            class="relative bg-white w-full max-w-xl rounded-4xl p-10 md:p-12 shadow-[0_50px_100px_rgba(0,0,0,0.3)] border border-slate-100 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent/10 blur-3xl rounded-full"></div>
+
+            <button onclick="closeExitModal()" class="absolute top-6 right-6 text-slate-300 hover:text-primary">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
             <div class="relative z-10 text-center">
                 <span
-                    class="inline-block bg-emerald-500/10 text-emerald-600 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">Recurso
-                    Gratuito</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-primary mb-4 leading-tight">No
-                    dejes que tu cartera pierda rentabilidad.</h3>
-                <p class="text-slate-500 mb-10 text-lg">Descarga nuestra guía: <strong>"Los 5 errores críticos que
-                        reducen el margen de un Asset Manager en 2026"</strong>.</p>
-                <form action="https://formspree.io/f/xkopkzla" method="POST" class="flex flex-col gap-4">
+                    class="inline-block bg-accent/10 text-accent px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">
+                    Free sample guide
+                </span>
+
+                <h3 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-primary mb-4 leading-tight">
+                    Want a sample Grand Prix guide before you go?
+                </h3>
+
+                <p class="text-slate-500 mb-8 text-lg">
+                    Get a free sample guide and early updates for upcoming race weekend plans.
+                </p>
+
+                <form id="exitForm" class="flex flex-col gap-4">
                     <input type="email" name="email" required
                         class="w-full bg-slate-50 border-none rounded-2xl p-5 text-primary text-center"
-                        placeholder="Tu email corporativo">
+                        placeholder="Your email">
                     <button type="submit"
-                        class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl">Enviar
-                        guía a mi inbox</button>
+                        class="interactive-btn w-full bg-primary text-white py-5 rounded-xl font-bold text-lg shadow-xl">
+                        Send me the sample
+                    </button>
                 </form>
-                <p class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">Enviamos valor, cero spam.
-                    Garantizado.</p>
+
+                <p class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">
+                    No spam. Just useful updates and early access.
+                </p>
             </div>
         </div>
     </div>
 
+    <!-- GUIDE MODAL -->
+    <div id="guideModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
+        <div class="absolute inset-0 bg-primary/30 backdrop-blur-[2px]" onclick="closeGuideModal()"></div>
+        <div class="relative bg-white w-full max-w-lg rounded-2xl p-8 shadow-2xl text-primary text-left">
+            <button onclick="closeGuideModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <h4 id="guideTitle" class="text-2xl font-bold mb-4"></h4>
+            <p id="guideContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
+            <button onclick="openPlannerModal(); closeGuideModal();"
+                class="w-full py-4 bg-primary text-white font-bold rounded-xl transition-colors">
+                Try the planner
+            </button>
+        </div>
+    </div>
+
+    <!-- INFO MODAL -->
     <div id="infoModal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 text-center">
         <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" onclick="closeInfo()"></div>
-        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary text-primary">
+        <div class="relative bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-primary">
             <h4 id="infoTitle" class="text-xl font-bold mb-4"></h4>
             <p id="infoContent" class="text-slate-500 text-sm mb-8 leading-relaxed"></p>
             <button onclick="closeInfo()"
-                class="w-full py-3 bg-slate-50 hover:bg-slate-100 font-bold rounded-xl transition-colors">Entendido</button>
+                class="w-full py-3 bg-slate-50 hover:bg-slate-100 font-bold rounded-xl transition-colors">
+                Got it
+            </button>
         </div>
     </div>
 
     <script>
-        const unitsInput = document.getElementById('units');
-        const rentInput = document.getElementById('rent');
-        const leakDisplay = document.getElementById('leak-total');
-        const unitsVal = document.getElementById('units-val');
-        const rentVal = document.getElementById('rent-val');
+        const gpRange = document.getElementById('gp-range');
+        const budgetRange = document.getElementById('budget-range');
+        const lengthRange = document.getElementById('length-range');
+        const styleRange = document.getElementById('style-range');
 
-        function updateCalculator() {
-            const units = parseInt(unitsInput.value);
-            const rent = parseInt(rentInput.value);
-            unitsVal.innerText = units;
-            rentVal.innerText = rent.toLocaleString() + '€';
-            const annualLeak = units * rent * 12 * 0.12;
-            leakDisplay.innerText = Math.round(annualLeak).toLocaleString() + '€';
+        const gpLabel = document.getElementById('gp-label');
+        const budgetLabel = document.getElementById('budget-label');
+        const lengthLabel = document.getElementById('length-label');
+        const styleLabel = document.getElementById('style-label');
+
+        const resultGp = document.getElementById('result-gp');
+        const resultBudget = document.getElementById('result-budget');
+        const resultTicket = document.getElementById('result-ticket');
+        const resultStay = document.getElementById('result-stay');
+        const tipsList = document.getElementById('tips-list');
+
+        const gpMap = {
+            1: "Monza",
+            2: "Silverstone",
+            3: "Barcelona"
+        };
+
+        const budgetMap = {
+            1: "Budget",
+            2: "Balanced",
+            3: "Premium"
+        };
+
+        const lengthMap = {
+            1: "2 nights",
+            2: "3 nights",
+            3: "4 nights"
+        };
+
+        const styleMap = {
+            1: "Efficiency-first",
+            2: "Comfort-first",
+            3: "Experience-first"
+        };
+
+        const plannerResults = {
+            "Monza": {
+                "Budget": {
+                    budget: "€650 – €950",
+                    ticket: "General admission",
+                    stay: "City base",
+                    tips: [
+                        "A shorter trip can work well if you stay organized.",
+                        "Consider Milan instead of staying too close to the circuit.",
+                        "Expect more trade-offs on comfort and transfers."
+                    ]
+                },
+                "Balanced": {
+                    budget: "€900 – €1,450",
+                    ticket: "Grandstand",
+                    stay: "City base",
+                    tips: [
+                        "Arrive on Friday to reduce transfer stress.",
+                        "Book in Milan for better options and flexibility.",
+                        "Grandstand is the best value for most first-time visitors."
+                    ]
+                },
+                "Premium": {
+                    budget: "€1,600 – €2,600",
+                    ticket: "Premium grandstand",
+                    stay: "Premium city stay",
+                    tips: [
+                        "Prioritize comfort if this is a bucket-list race weekend.",
+                        "Choose flexible hotel options close to transit.",
+                        "A longer stay makes the weekend feel far less rushed."
+                    ]
+                }
+            },
+            "Silverstone": {
+                "Budget": {
+                    budget: "€700 – €1,050",
+                    ticket: "General admission",
+                    stay: "Budget outer area",
+                    tips: [
+                        "Transport planning matters more here than people expect.",
+                        "Check local travel times carefully before booking cheap stays.",
+                        "A budget trip is possible, but convenience drops quickly."
+                    ]
+                },
+                "Balanced": {
+                    budget: "€1,050 – €1,650",
+                    ticket: "Grandstand",
+                    stay: "Well-connected town",
+                    tips: [
+                        "A balanced budget gives you a noticeably better weekend here.",
+                        "Stay where transport is predictable, not just cheap.",
+                        "Grandstand is the strongest all-round option for first-timers."
+                    ]
+                },
+                "Premium": {
+                    budget: "€1,800 – €3,000",
+                    ticket: "Premium seat",
+                    stay: "Comfort stay",
+                    tips: [
+                        "Paying more here usually buys smoother logistics.",
+                        "A premium trip works best when convenience is the priority.",
+                        "Build in more buffer time around circuit access."
+                    ]
+                }
+            },
+            "Barcelona": {
+                "Budget": {
+                    budget: "€600 – €900",
+                    ticket: "General admission",
+                    stay: "Barcelona budget stay",
+                    tips: [
+                        "Barcelona is one of the easier first GP trips to manage on a budget.",
+                        "A city base can still work well if you plan your transfers.",
+                        "Watch for hidden costs around race-day travel."
+                    ]
+                },
+                "Balanced": {
+                    budget: "€850 – €1,300",
+                    ticket: "Grandstand",
+                    stay: "Barcelona city stay",
+                    tips: [
+                        "This is a very solid first GP option if you want good city access.",
+                        "A balanced budget gives you strong flexibility here.",
+                        "Grandstand plus a 3-night stay is a sensible default."
+                    ]
+                },
+                "Premium": {
+                    budget: "€1,400 – €2,300",
+                    ticket: "Premium grandstand",
+                    stay: "Premium city stay",
+                    tips: [
+                        "If comfort matters, Barcelona scales well into a premium trip.",
+                        "A premium plan makes the city-race balance much smoother.",
+                        "This is one of the easiest races to turn into a longer weekend."
+                    ]
+                }
+            }
+        };
+
+        function updatePlanner() {
+            const gp = gpMap[gpRange.value];
+            const budget = budgetMap[budgetRange.value];
+            const length = lengthMap[lengthRange.value];
+            const style = styleMap[styleRange.value];
+
+            gpLabel.innerText = gp;
+            budgetLabel.innerText = budget;
+            lengthLabel.innerText = length;
+            styleLabel.innerText = style;
+
+            const result = plannerResults[gp][budget];
+
+            resultGp.innerText = gp;
+            resultBudget.innerText = result.budget;
+            resultTicket.innerText = result.ticket;
+            resultStay.innerText = result.stay;
+
+            tipsList.innerHTML = result.tips.map(t => `<li>${t}</li>`).join('');
         }
 
-        unitsInput.addEventListener('input', updateCalculator);
-        rentInput.addEventListener('input', updateCalculator);
+        gpRange.addEventListener('input', updatePlanner);
+        budgetRange.addEventListener('input', updatePlanner);
+        lengthRange.addEventListener('input', updatePlanner);
+        styleRange.addEventListener('input', updatePlanner);
 
-        function toggleModal() {
-            const modal = document.getElementById('demoModal');
-            modal.classList.toggle('hidden');
-            document.body.style.overflow = modal.classList.contains('hidden') ? 'auto' : 'hidden';
+        function openPlannerModal() {
+            const modal = document.getElementById('plannerModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePlannerModal() {
+            document.getElementById('plannerModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
 
         function showInfo(title, content) {
@@ -681,10 +1013,32 @@
 
         function closeInfo() {
             document.getElementById('infoModal').classList.add('hidden');
-            if (document.getElementById('demoModal').classList.contains('hidden')) document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openGuideModal(gp) {
+            const guideTitle = document.getElementById('guideTitle');
+            const guideContent = document.getElementById('guideContent');
+
+            const guideMap = {
+                "Monza": "Monza is iconic, emotional, and fast — but your stay strategy matters more than most first-time fans expect. A good plan here is less about luxury and more about avoiding avoidable friction.",
+                "Silverstone": "Silverstone is one of the strongest pure racing weekends on the calendar. The main challenge is not interest — it is planning transport, stay location, and race-day flow properly.",
+                "Barcelona": "Barcelona is one of the easiest races to turn into a complete city-plus-circuit weekend. Done well, it balances budget, convenience, and first-time fan experience very effectively."
+            };
+
+            guideTitle.innerText = gp + " sample guide";
+            guideContent.innerText = guideMap[gp];
+            document.getElementById('guideModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guideModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
 
         let exitShown = false;
+
         function closeExitModal() {
             document.getElementById('exitModal').classList.add('hidden');
             document.body.style.overflow = 'auto';
@@ -699,7 +1053,8 @@
         });
 
         document.addEventListener("DOMContentLoaded", () => {
-            updateCalculator();
+            updatePlanner();
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
@@ -718,34 +1073,21 @@
             });
         });
 
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                const btn = e.target.querySelector('button');
-                const originalText = btn.innerText;
-                btn.innerText = "Enviando...";
-                btn.disabled = true;
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (response.ok) {
-                        if (form.closest('#exitModal')) {
-                            btn.innerText = "¡Enviado!";
-                            setTimeout(() => closeExitModal(), 1500);
-                        } else {
-                            form.classList.add('hidden');
-                            document.getElementById('successMessage').classList.remove('hidden');
-                        }
-                    }
-                } catch (error) {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }
-            });
+        const leadForm = document.getElementById('leadForm');
+        const exitForm = document.getElementById('exitForm');
+
+        leadForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('plannerFormWrap').classList.add('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
+        });
+
+        exitForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = exitForm.querySelector('button');
+            btn.innerText = "Sent";
+            btn.disabled = true;
+            setTimeout(() => closeExitModal(), 1200);
         });
     </script>
 </body>
